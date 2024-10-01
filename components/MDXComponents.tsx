@@ -10,7 +10,6 @@ import Emoji from '@/components/twemoji'
 import TOCInline from '@/components/TOCInline'
 import GitHubCard from '@/components/GitHubCard'
 
-
 export const components: MDXComponents = {
   Image,
   TOCInline,

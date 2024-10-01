@@ -12,7 +12,6 @@ import Vercel from './vercel.svg'
 import Nextjs from './nextjs.svg'
 import Tailwind from './tailwindcss.svg'
 
-
 // Icons taken from: https://simpleicons.org/
 
 const components = {

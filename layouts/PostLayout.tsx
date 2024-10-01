@@ -1,4 +1,4 @@
-'use client';
+'use client'
 
 import { ReactNode } from 'react'
 import { CoreContent } from 'pliny/utils/contentlayer'
@@ -39,15 +39,15 @@ interface LayoutProps {
 
 export default function PostLayout({
   toc,
-  content, 
-  authorDetails, 
-  next, 
-  prev, 
-  children, 
+  content,
+  authorDetails,
+  next,
+  prev,
+  children,
 }: LayoutProps) {
   const { filePath, path, slug, date, title, tags } = content
   const basePath = path.split('/')[0]
- 
+
   return (
     <SectionContainer>
       <ProgressBar />
@@ -113,7 +113,7 @@ export default function PostLayout({
               <div className="prose max-w-none pb-8 pt-10 dark:prose-invert">{children}</div>
               <div className="pb-6 pt-6 text-sm text-gray-700 dark:text-gray-300">
                 <Link href={discussUrl(path)} rel="nofollow">
-                {/* 备注：这是一个名称，指向讨论页面的 URL */}
+                  {/* 备注：这是一个名称，指向讨论页面的 URL */}
                 </Link>
                 {`  `} {/* 两个 URL 间的空格 */}
                 <Link href={editUrl(filePath)}>{/* 这是一个名称，指向编辑页面的 URL */}</Link>
@@ -128,14 +128,14 @@ export default function PostLayout({
               )}
             </div>
             <footer>
-              <h2 className="pt-6 text-xs font-bold uppercase tracking-wide text-gray-500 dark:text-gray-400">         
+              <h2 className="pt-6 text-xs font-bold uppercase tracking-wide text-gray-500 dark:text-gray-400">
                 目录
-              </h2>  
+              </h2>
               <TOCInline asDisclosure={false} toc={toc} />
               <div className="divide-gray-200 text-sm font-medium leading-5 dark:divide-gray-700 xl:col-start-1 xl:row-start-2 xl:divide-y">
                 {tags && (
                   <div className="py-4 xl:py-8 ">
-                    <h2 className="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400 font-bold mb-4">
+                    <h2 className="mb-4 text-xs font-bold uppercase tracking-wide text-gray-500 dark:text-gray-400">
                       标签
                     </h2>
                     <div className="flex flex-wrap">
@@ -149,7 +149,7 @@ export default function PostLayout({
                   <div className="flex justify-between py-4 xl:block xl:space-y-8 xl:py-8">
                     {prev && prev.path && (
                       <div>
-                        <h2 className="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400 font-bold">
+                        <h2 className="text-xs font-bold uppercase tracking-wide text-gray-500 dark:text-gray-400">
                           上一篇文章
                         </h2>
                         <div className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400">
@@ -159,7 +159,7 @@ export default function PostLayout({
                     )}
                     {next && next.path && (
                       <div>
-                        <h2 className="text-xs uppercase tracking-wide text-gray-500 dark:text-gray-400 font-bold">
+                        <h2 className="text-xs font-bold uppercase tracking-wide text-gray-500 dark:text-gray-400">
                           下一篇文章
                         </h2>
                         <div className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400">

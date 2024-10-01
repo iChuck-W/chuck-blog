@@ -16,7 +16,7 @@ export default function Footer() {
           <SocialIcon kind="mfw" href={siteMetadata.mfw} size={4} />
           <SocialIcon kind="github" href={siteMetadata.github} size={4} />
         </div>
-        <div className="flex items-center mb-8 text-sm text-gray-500 dark:text-gray-400 space-x-2">
+        <div className="mb-8 flex items-center space-x-2 text-sm text-gray-500 dark:text-gray-400">
           <div>{` Powered by `}</div>
           <SocialIcon kind="vercel" href={siteMetadata.vercel} size={4} />
           <SocialIcon kind="nextjs" href={siteMetadata.nextjs} size={4} />

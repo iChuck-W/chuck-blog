@@ -9,12 +9,7 @@ const Greetings = () => {
 
   React.useEffect(() => {
     const options = {
-      strings: [
-        '在这个瞬息万变的时代',
-        '拥抱变化',
-        '拥抱不确定性',
-        '......',
-      ],
+      strings: ['在这个瞬息万变的时代', '拥抱变化', '拥抱不确定性', '......'],
       typeSpeed: 40,
       backSpeed: 40,
       loop: true,
@@ -44,9 +39,7 @@ const Greetings = () => {
         <div className="type-wrap">
           <span style={{ whiteSpace: 'pre' }} ref={el} />
           <br />
-          <p>
-          {' '}
-          </p>
+          <p> </p>
         </div>
       </div>
     </div>

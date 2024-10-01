@@ -9,7 +9,7 @@ import Image from 'next/image'
 
 const Header = () => {
   return (
-    <header className="flex items-center justify-between py-10 z-10 rounded-b-lg p-4">
+    <header className="z-10 flex items-center justify-between rounded-b-lg p-4 py-10">
       <div>
         <Link href="/" aria-label={siteMetadata.headerTitle}>
           <div className="flex items-center justify-between gap-3 ">

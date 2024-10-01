@@ -35,8 +35,9 @@ module.exports = {
           100: '#282C31',
         },
         primary: colors.blue, // 颜色主调：colors.teal
-        gray: colors.zinc,    // 灰色系颜色：colors.neutral, colors.slate, colors.zinc
-        hans: {               // 自定义颜色配置，需要在 tailwind.css 中导入
+        gray: colors.zinc, // 灰色系颜色：colors.neutral, colors.slate, colors.zinc
+        hans: {
+          // 自定义颜色配置，需要在 tailwind.css 中导入
           100: '#ABB581',
           200: '#5D6833',
           300: '#6F90B5',

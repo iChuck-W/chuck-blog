@@ -8,12 +8,13 @@ export default function Home() {
       {/*  */}
       <br />
       <a target="_blank" href="https://www.aibangxuanxing.com/" className="custom-link">
-       🧑‍🏭 工业品智能专家
+        🧑‍🏭 工业品智能专家
       </a>
       <div className="type-wrap">
         <span style={{ whiteSpace: 'pre' }} />
         <p>
-          这是一个以品牌官网为资讯中心的对话助手，<b>右下角对话按键</b>💬会在全网的页面保持呈现，可以随时点击，开始对话。
+          这是一个以品牌官网为资讯中心的对话助手，<b>右下角对话按键</b>
+          💬会在全网的页面保持呈现，可以随时点击，开始对话。
           <br />
         </p>
       </div>
@@ -27,7 +28,7 @@ export default function Home() {
       ></iframe>
       <br />
       <a target="_blank" href="https://chuck-gallery.vercel.app/grid" className="custom-link">
-       🌏 图库
+        🌏 图库
       </a>
       <div className="type-wrap">
         <span style={{ whiteSpace: 'pre' }} />

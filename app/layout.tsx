@@ -4,7 +4,7 @@ import 'pliny/search/algolia.css'
 // import 'remark-github-blockquote-alert/alert.css'
 // import { Space_Grotesk } from 'next/font/google'
 // import { Analytics } from 'pliny/analytics'
-import ChatbotDialog from '@/components/ChatbotDialog';
+import ChatbotDialog from '@/components/ChatbotDialog'
 import Footer from '@/components/Footer'
 import Header from '@/components/Header'
 import React from 'react'
@@ -78,12 +78,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <Header />
                 <main className="mb-auto">{children}</main>
                 <div className="bg-image-container bg-image-container-one"></div>
-                <div className="bg-image-container bg-image-container-two w-3/6 h-3/6 md:w-3/6 md:h-3/6 "></div>
+                <div className="bg-image-container bg-image-container-two h-3/6 w-3/6 md:h-3/6 md:w-3/6 "></div>
                 {/* <div className="bg-image-container bg-image-container-three"></div> */}
               </SearchProvider>
               <Footer />
             </div>
-          <ChatbotDialog />
+            <ChatbotDialog />
           </SectionContainer>
         </ThemeProviders>
       </body>
