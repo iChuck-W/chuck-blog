@@ -27,7 +27,7 @@ export default function Home() {
         className="iframe"
       ></iframe>
       <br />
-      <a target="_blank" href="https://chuck-gallery.vercel.app/grid" className="custom-link">
+      <a target="_blank" href="https://chuckgallery.vercel.app/grid" className="custom-link">
         🌏 图库
       </a>
       <div className="type-wrap">
@@ -42,7 +42,7 @@ export default function Home() {
       <br />
       <iframe
         title="agent"
-        src="https://chuck-gallery.vercel.app/grid"
+        src="https://chuckgallery.vercel.app/grid"
         height="500px"
         width="100%"
         className="iframe"
