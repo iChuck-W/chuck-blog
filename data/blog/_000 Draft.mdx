@@ -1,18 +1,481 @@
 ---
-title: 'Draft'
+title: '资料汇总'
 authors: ['default']
-date: '2024-06-12'
-lastmod: '2024-09-23'
-tags: ['Draft']
+date: '2024-10-05'
+lastmod: '2024-10-05'
+tags: ['资料']
 draft: false
-summary: 'Draft。'
+layout: PostLayout
+summary: '摘录内容示例。'
 ---
 
-# photo
+## 目录
+
+Tailwind Nextjs Starter Blog 模板 v2.0。此版本是对代码库的重大重构，以支持 Nextjs App Directory 和 React Server Components。
+
+<TOCInline toc={props.toc} exclude="Introduction" />
+
+<TOCInline toc={props.toc} exclude="Overview" toHeading={2} />
+
+## 简介
+
+- **项目链接**
+  - [Github - Tailwind CSS Blog](https://github.com/timlrx/tailwind-nextjs-starter-blog)
+  - [Next.js - Tailwind CSS Blog](https://tailwind-nextjs-starter-blog.vercel.app/blog)
+  - [Sponsor @timlrx on GitHub Sponsors](https://github.com/sponsors/timlrx)
+
+- **在线模板**
+  - [Tailwind CSS Blog – Vercel](https://vercel.com/templates/next.js/tailwind-css-starter-blog)
+  - [Tailwind Nextjs Starter Blog | Tailwind Awesome](https://www.tailwindawesome.com/resources/tailwind-nextjs-starter-blog)
+
+- **Next.js App Directory and React Server Components**
+    - [Next.js App router](https://nextjs.org/docs/app)
+    - [new paradigm](https://nextjs.org/docs/getting-started/react-essentials)
+    - [Metadata](https://nextjs.org/docs/app/building-your-application/optimizing/metadata)
+
+- **Markdowb**
+  - [Basic writing and formatting syntax - GitHub Docs](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
+
+
+## 功能组
+
+### 表格
+
+```
+| First Header                | Second Header                |
+| --------------------------- | ---------------------------- |
+| Content from cell 1         | Content from cell 2          |
+| Content in the first column | Content in the second column |
+```
+
+| First Header                | Second Header                |
+| --------------------------- | ---------------------------- |
+| Content from cell 1         | Content from cell 2          |
+| Content in the first column | Content in the second column |
+
+### 链接
+```
+http://github.com - automatic!
+[GitHub](http://github.com)
+```
+
+http://github.com - automatic!
+[GitHub](http://github.com)
+
+### 脚注
+
+```
+脚注示例[^1]。
+
+[^1]: My reference.
+```
+
+脚注示例[^1]。
+
+[^1]: My reference.
+
+### 引用
+
+```
+As Kanye West said:
+
+> We're living the future so
+> the present is our past.
+```
+
+As Kanye West said:
+
+> We're living the future so
+> the present is our past.
+
+
+### 删除线
+
+`~~删除线~~`
+
+~~删除线~~
+
+### 代码块
+
+````
+```js:fancyAlert.js
+function fancyAlert(arg) {
+  if (arg) {
+    $.facebox({ div: '#foo' })
+  }
+}
+```
+````
+
+```js:fancyAlert.js
+function fancyAlert(arg) {
+  if (arg) {
+    $.facebox({ div: '#foo' })
+  }
+}
+```
+
+### 任务表
+
+```
+- [x] list syntax required (any unordered or ordered list supported)
+- [x] this is a complete item
+- [ ] this is an incomplete item
+```
+
+- [x] list syntax required (any unordered or ordered list supported)
+- [x] this is a complete item
+- [ ] this is an incomplete item
+
+## 图片&视频
+
+### 视频
+```
+<video controls>
+  <source
+    src="https://github-production-user-asset-6210df.s3.amazonaws.com/28362229/258559849-2124c81f-b99d-4431-839c-347e01a2616c.webm"
+    type="video/webm"
+  />
+</video>
+```
+
+<video controls>
+  <source
+    src="https://github-production-user-asset-6210df.s3.amazonaws.com/28362229/258559849-2124c81f-b99d-4431-839c-347e01a2616c.webm"
+    type="video/webm"
+  />
+</video>
+
+### Gallary
+
+```js
+<div className="-mx-2 flex flex-wrap overflow-hidden xl:-mx-2">
+  <div className="my-1 w-full overflow-hidden px-2 xl:my-1 xl:w-1/2 xl:px-2">
+    ![Maple](/static/images/MFW-2018-10-07.jpeg)
+  </div>
+  <div className="my-1 w-full overflow-hidden px-2 xl:my-1 xl:w-1/2 xl:px-2">
+    ![Lake](/static/images/MFW-2018-10-07.jpeg)
+  </div>
+  <div className="my-1 w-full overflow-hidden px-2 xl:my-1 xl:w-1/2 xl:px-2">
+    ![Mountains](/static/images/MFW-2018-10-07.jpeg)
+  </div>
+  <div className="my-1 w-full overflow-hidden px-2 xl:my-1 xl:w-1/2 xl:px-2">
+    ![Toronto](/static/images/MFW-2018-10-07.jpeg)
+  </div>
+</div>
+```
+
+<div className="-mx-2 flex flex-wrap overflow-hidden xl:-mx-2">
+  <div className="my-1 w-full overflow-hidden px-2 xl:my-1 xl:w-1/2 xl:px-2">
+    ![Maple](/static/images/MFW-2018-10-07.jpeg)
+  </div>
+  <div className="my-1 w-full overflow-hidden px-2 xl:my-1 xl:w-1/2 xl:px-2">
+    ![Lake](/static/images/MFW-2018-10-07.jpeg)
+  </div>
+  <div className="my-1 w-full overflow-hidden px-2 xl:my-1 xl:w-1/2 xl:px-2">
+    ![Mountains](/static/images/MFW-2018-10-07.jpeg)
+  </div>
+  <div className="my-1 w-full overflow-hidden px-2 xl:my-1 xl:w-1/2 xl:px-2">
+    ![Toronto](/static/images/MFW-2018-10-07.jpeg)
+  </div>
+</div>
+
+### Images in Next.js
+
+tailwind starter 博客对 [Next.js 的内置图像组件](https://nextjs.org/docs/api-reference/next/image)提供开箱即用的支持，并自动替换 markdown 或 mdx 文档中的默认图像标签以使用提供的 Image 组件。
+
+要在新的页面路由/javascript 文件中使用，只需导入图像组件并调用它，例如
+
+```js
+import Image from 'next/image'
+
+function Home() {
+  return (
+    <>
+      <h1>My Homepage</h1>
+      <Image src="/me.png" alt="Picture of the author" width={500} height={500} />
+      <p>Welcome to my homepage!</p>
+    </>
+  )
+}
+
+export default Home
+```
+
+```
+![MFW](/static/images/MFW-2018-10-07.jpeg)
+```
+
+![MFW](/static/images/MFW-2018-10-07.jpeg)
+
+```js
+<Image alt="MFW" src="/static/images/MFW-2018-10-07.jpeg" width={256} height={128} />
+```
+
+<Image alt="MFW" src="/static/images/MFW-2018-10-07.jpeg" width={256} height={128} />
+
+```
+<Image
+  alt="Photo1"
+  src="https://fyllu8frywoegleh.public.blob.vercel-storage.com/photo-tYNsqoh1FJNopFgV.jpg"
+  width={256}
+  height={128}
+/>
+```
 
 <Image
-  alt="001"
-  src="https://fyllu8frywoegleh.public.blob.vercel-storage.com/photo-gJxkjRKGAgJVjmF2.jpg"
-  width={400}
-  height={200}
+  alt="Photo1"
+  src="https://fyllu8frywoegleh.public.blob.vercel-storage.com/photo-tYNsqoh1FJNopFgV.jpg"
+  width={256}
+  height={128}
 />
+
+```
+![Photo2](https://fyllu8frywoegleh.public.blob.vercel-storage.com/photo-tYNsqoh1FJNopFgV.jpg)
+Format: ![Alt Text](url)
+```
+
+![Photo2](https://fyllu8frywoegleh.public.blob.vercel-storage.com/photo-tYNsqoh1FJNopFgV.jpg)
+
+* **优势**
+  * 使用 Webp 时图像尺寸更小（比 jpeg 小 ~30%）
+  * 响应式图像 - 根据用户的视区提供正确的图像大小
+  * 延迟加载 - 图像在滚动到视区时加载
+  * 避免 [Cumulative Layout Shift](https://web.dev/articles/cls?hl=zh-cn)
+  * 按需优化而不是构建时 - 不会增加构建时间！
+
+* **限制**
+  * 由于对 `next/image` 的依赖，除非您使用像 Cloudinary 或 Imgix 这样的外部图像 CDN，否则实际上需要使用 Vercel 进行托管。这是因为该组件的作用类似于调用高度优化的图像 CDN 的无服务器函数。
+  * 如果你不想被 Vercel 绑架，你可以去掉 `lib/mdx.js` 中 `remarkPlugins` 中的 `imgToJsx`。这将避免替换默认的 img 标签。
+  * 或者，可以等待支持构建时的图像优化。另一个库 [next-optimized-images]((https://github.com/cyrilwanner/next-optimized-images)) 可以做到这一点，尽管它需要通过 webpack 转换图像，这里没有完成。
+  * 来自外部链接的图像不会通过 `next/image` 传递。
+  * 所有图像都必须存储在 `public` 文件夹中，例如 `/static/images/ocean.jpeg`。
+
+## OLS Estimator
+
+- 有关支持的 TeX 函数的完整列表，请查看 [KaTeX 文档](https://katex.org/docs/supported.html)
+
+```tex
+\mathbf{Y} = \left[\begin{array}
+  {c}
+  y_1 \\
+  . \\
+  . \\
+  . \\
+  y_n
+\end{array}\right]
+```
+
+$$
+\mathbf{Y} = \left[\begin{array}
+  {c}
+  y_1 \\
+  . \\
+  . \\
+  . \\
+  y_n
+\end{array}\right]
+$$
+
+```latex
+\mathbf{X} = \left[\begin{array}
+  {ccccc}
+  x_{11} & . & . & . & x_{1k} \\
+  . & . & . & . & .  \\
+  . & . & . & . & .  \\
+  . & . & . & . & .  \\
+  x_{n1} & . & . & . & x_{nn}
+\end{array}\right] =
+\left[\begin{array}
+  {c}
+  \mathbf{x}'_1 \\
+  . \\
+  . \\
+  . \\
+  \mathbf{x}'_n
+\end{array}\right]
+```
+
+$$
+\mathbf{X} = \left[\begin{array}
+  {ccccc}
+  x_{11} & . & . & . & x_{1k} \\
+  . & . & . & . & .  \\
+  . & . & . & . & .  \\
+  . & . & . & . & .  \\
+  x_{n1} & . & . & . & x_{nn}
+\end{array}\right] =
+\left[\begin{array}
+  {c}
+  \mathbf{x}'_1 \\
+  . \\
+  . \\
+  . \\
+  \mathbf{x}'_n
+\end{array}\right]
+$$
+
+- **Start**:
+
+```
+$$y_i = \mathbf{x}'_i \beta + u_i$$
+```
+$$y_i = \mathbf{x}'_i \beta + u_i$$
+
+- **Assumptions**:
+
+1. Linearity (given above)
+2. $E(\mathbf{U}|\mathbf{X}) = 0$ (conditional independence)
+3. rank($\mathbf{X}$) = $k$ (no multi-collinearity i.e. full rank)
+4. $Var(\mathbf{U}|\mathbf{X}) = \sigma^2 I_n$ (Homoskedascity)
+
+- **Aim**:  
+Find $\beta$ that minimises the sum of squared errors:
+
+```
+$$
+Q = \sum_{i=1}^{n}{u_i^2} = \sum_{i=1}^{n}{(y_i - \mathbf{x}'_i\beta)^2} = (Y-X\beta)'(Y-X\beta)
+$$
+```
+
+$$
+Q = \sum_{i=1}^{n}{u_i^2} = \sum_{i=1}^{n}{(y_i - \mathbf{x}'_i\beta)^2} = (Y-X\beta)'(Y-X\beta)
+$$
+
+- **Solution**:  
+Hints: $Q$ is a $1 \times 1$ scalar, by symmetry $\frac{\partial b'Ab}{\partial b} = 2Ab$.
+Take matrix derivative w.r.t $\beta$:
+
+```tex
+\begin{aligned}
+  \min Q           & = \min_{\beta} \mathbf{Y}'\mathbf{Y} - 2\beta'\mathbf{X}'\mathbf{Y} +
+  \beta'\mathbf{X}'\mathbf{X}\beta \\
+                   & = \min_{\beta} - 2\beta'\mathbf{X}'\mathbf{Y} + \beta'\mathbf{X}'\mathbf{X}\beta \\
+  \text{[FOC]}~~~0 & =  - 2\mathbf{X}'\mathbf{Y} + 2\mathbf{X}'\mathbf{X}\hat{\beta}                  \\
+  \hat{\beta}      & = (\mathbf{X}'\mathbf{X})^{-1}\mathbf{X}'\mathbf{Y}                              \\
+                   & = (\sum^{n} \mathbf{x}_i \mathbf{x}'_i)^{-1} \sum^{n} \mathbf{x}_i y_i
+\end{aligned}
+```
+
+$$
+\begin{aligned}
+  \min Q           & = \min_{\beta} \mathbf{Y}'\mathbf{Y} - 2\beta'\mathbf{X}'\mathbf{Y} +
+  \beta'\mathbf{X}'\mathbf{X}\beta \\
+                   & = \min_{\beta} - 2\beta'\mathbf{X}'\mathbf{Y} + \beta'\mathbf{X}'\mathbf{X}\beta \\
+  \text{[FOC]}~~~0 & =  - 2\mathbf{X}'\mathbf{Y} + 2\mathbf{X}'\mathbf{X}\hat{\beta}                  \\
+  \hat{\beta}      & = (\mathbf{X}'\mathbf{X})^{-1}\mathbf{X}'\mathbf{Y}                              \\
+                   & = (\sum^{n} \mathbf{x}_i \mathbf{x}'_i)^{-1} \sum^{n} \mathbf{x}_i y_i
+\end{aligned}
+$$
+
+## 组件
+
+### 注意
+
+- layout 默认为 PostLayout，设为其他时页面左侧无目录。
+
+- [点击在文章内部跳转到标题：目录](#目录)
+
+### Container
+
+[Contentlayer](https://www.contentlayer.dev/) 是一个内容 SDK，可验证您的内容并将其转换为类型安全的 JSON 数据，您可以轻松地将其导入到应用程序中。它使使用本地 markdown 或 MDX 文件变得轻而易举。这取代了 MDX-bundler 和我们自己的 markdown 处理工作流程。
+
+首先，定义内容源，指定文档类型的名称、文档类型所在的源以及 frontmatter 字段和应在流程中生成的任何其他计算字段。
+
+然后，Contentlayer 使用我们所需的 markdown 注释或 rehype 插件处理 MDX 文件，验证架构，生成类型定义并输出可以轻松导入我们页面的 json 文件。热重载是开箱即用的，因此对 markdown 文件的编辑将立即反映在浏览器中！
+
+```ts:contentlayer.config.ts
+export const Blog = defineDocumentType(() => ({
+  name: 'Blog',
+  filePathPattern: 'blog/**/*.mdx',
+  contentType: 'mdx',
+  fields: {
+    title: { type: 'string', required: true },
+    date: { type: 'date', required: true },
+    tags: { type: 'list', of: { type: 'string' }, default: [] },
+    ...
+  },
+  computedFields: {
+    readingTime: { type: 'json', resolve: (doc) => readingTime(doc.body.raw) },
+    slug: {
+      type: 'string',
+      resolve: (doc) => doc._raw.flattenedPath.replace(/^.+?(\/)/, ''),
+    }
+    ...
+  },
+}))
+```
+
+### Pliny
+
+[Pliny](https://github.com/timlrx/pliny) 提供了开箱即用的 Next.js 组件来增强静态站点：
+
+- Analytics
+  - Google Analytics
+  - Plausible Analytics
+  - Simple Analytics
+  - Umami Analytics
+  - Posthog
+- Comments
+  - Disqus
+  - Giscus
+  - Utterances
+- Newsletter (uses Next 13 API Routes)
+  - Buttondown
+  - Convertkit
+  - Email Octopus
+  - Klaviyo
+  - Mailchimp
+  - Revue
+- Command palette search with tailwind style sheet
+  - Algolia
+  - Kbar (local search)
+- UI utility components
+  - Bleed
+  - Newsletter / Blog Newsletter
+  - Pre / Code block
+  - Table of Contents
+
+通过修改 `siteMetadata.js` 并更改相应的字段来选择您的首选服务。例如，要从 Umami Analytics 更改为 Plausible，我们可以更改以下字段：
+
+```diff-js:siteMetadata.js
+analytics: {
+-   umamiAnalytics: {
+-     // We use an env variable for this site to avoid other users cloning our analytics ID
+-     umamiWebsiteId: process.env.NEXT_UMAMI_ID, // e.g. 123e4567-e89b-12d3-a456-426614174000
+-   },
++    plausibleAnalytics: {
++      plausibleDataDomain: '', // e.g. tailwind-nextjs-starter-blog.vercel.app
++    },
+},
+```
+配置文件中的更改会自动传播到组件。无需对模板进行修改。在后台，Pliny 会导出高级组件，例如 `<Analytics analyticsConfig={analyticsConfig}/>` and `<Comments commentsConfig={commentsConfig}/>` ，它接收一个配置对象并渲染相应的组件。由于布局是在服务器端定义的，因此Next.js能够使用配置对象来确定要渲染的组件，并仅将所需的组件捆绑包发送到客户端。
+
+### New Search Component
+
+搜索组件支持 2 个搜索提供程序 - Algolia 和 Kbar 本地搜索。
+
+[Algolia Docsearch](https://docsearch.algolia.com/) 是许多文档网站上使用的流行免费服务。它会自动抓取已提交索引的网站，并通过漂亮的对话框模式提供搜索结果。pliny 组件深受 Docusaurus 实现的启发，并带有与 Tailwind CSS 主题兼容的样式表。
+
+[Kbar](https://github.com/timc1/kbar) 是一个快速、可移植且可扩展的 cmd+k 接口。pliny 实现使用 kbar 创建本地搜索对话框。该组件加载在 contentlayer 构建过程中创建的 JSON 文件 default `search.json`。尝试按 ⌘-k 或 ctrl-k 来查看搜索栏的实际效果！
+
+### Styling and Layout Updates
+
+主要主题颜色从`青色`更新为`粉红色`，主要灰色主题从`中性`更新为`灰色`。
+
+Inter 现在被 Space Grotesk 作为默认字体取代。
+
+layouts 目录中提供的布局组件提供了一种自定义博客外观的简单方法。[^2]
+
+### Migration Recommendations
+
+Markdown 布局不再自动来自 `layouts` 目录。相反，必须在 `blog/[...slug]/page.tsx 的 slug]` 中。
+
+要移植更大的组件或页面，我建议首先使用 `“use client”` 指令将其指定为客户端组件。一旦它正确渲染，你就可以将交互式组件（依赖于 use hooks 的部分）拆分为客户端组件，并将剩余的代码保留为服务器组件。有关更多详细信息，请参阅全面的 Next.js [迁移指南]https://nextjs.org/docs/app/building-your-application/upgrading/app-router-migration#migrating-from-pages-to-app。
+
+## Licence
+
+[MIT](https://github.com/timlrx/tailwind-nextjs-starter-blog/blob/main/LICENSE) © [Timothy Lin](https://www.timrlx.com)
+
+[^1]: 脚注示例。
+[^2]: 这与 Next.js App Directory 布局不同，最好将其视为可重用的 React 容器。
