@@ -64,7 +64,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   const basePath = process.env.BASE_PATH || ''
 
   return (
-    <html 
+    <html
       lang={siteMetadata.language}
       className={`${space_grotesk.variable} scroll-smooth`}
       suppressHydrationWarning
@@ -90,7 +90,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               </SearchProvider>
               <Footer />
             </div>
-            <ChatbotDialog /> 
+            <ChatbotDialog />
           </SectionContainer>
         </ThemeProviders>
       </body>

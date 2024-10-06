@@ -110,7 +110,9 @@ export default function PostLayout({
               </dd>
             </dl>
             <div className="divide-y divide-gray-200 dark:divide-gray-700 xl:col-span-3 xl:row-span-2 xl:pb-0">
-              <div className="prose max-w-none py-8 dark:prose-dark lg:prose-lg prose-img:rounded-xl">{children}</div>
+              <div className="prose max-w-none py-8 dark:prose-dark lg:prose-lg prose-img:rounded-xl">
+                {children}
+              </div>
               <div className="pb-6 pt-6 text-sm text-gray-700 dark:text-gray-300">
                 <Link href={discussUrl(path)} rel="nofollow">
                   {/* 备注：这是一个名称，指向讨论页面的 URL */}
