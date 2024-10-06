@@ -10,12 +10,11 @@ module.exports = {
   content: [
     './node_modules/pliny/**/*.js',
     './app/**/*.{js,ts,jsx,tsx}',
-    './data/**/*.mdx',
-    './data/**/*.md',
-    './pages/**/*.tsx',
-    './components/**/*.tsx',
-    './layouts/**/*.tsx',
-    './lib/**/*.ts',
+    './pages/**/*.{js,ts,tsx}',
+    './components/**/*.{js,ts,tsx}',
+    './layouts/**/*.{js,ts,tsx}',
+    './lib/**/*.{js,ts,tsx}',
+    './data/**/*.{mdx,md}',
   ],
   darkMode: 'class',
   theme: {
@@ -34,8 +33,8 @@ module.exports = {
           DEFAULT: '#22272E',
           100: '#282C31',
         },
-        primary: colors.blue, // 颜色主调：colors.teal
-        gray: colors.zinc, // 灰色系颜色：colors.neutral, colors.slate, colors.zinc
+        primary: colors.blue, // 颜色主调：colors.teal, colors.blue
+        gray: colors.neutral, // 灰色系颜色：colors.neutral, colors.slate, colors.zinc
         hans: {
           // 自定义颜色配置，需要在 tailwind.css 中导入
           100: '#ABB581',

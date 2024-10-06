@@ -4,7 +4,7 @@ const siteMetadata = {
   author: 'Chuck',
   headerTitle: 'Chuck',
   description: '拥抱时代变革，记录成长经历。',
-  language: 'zh-CN', //en-us
+  language: 'en-us', //en-us, zh-CN
   theme: 'light', // system, dark or light
   siteUrl: 'https://ichuck.top',
   siteRepo: 'https://github.com/timlrx/tailwind-nextjs-starter-blog',
@@ -23,7 +23,7 @@ const siteMetadata = {
   vercel: 'https://vercel.com/home',
   nextjs: 'https://nextjs.org/',
   tailwind: 'https://tailwindcss.com/',
-  locale: 'zh-CN', // en-US
+  locale: 'en-us', // en-US, zh-CN
   postDateTemplate: {
     weekday: 'long',
     year: 'numeric',

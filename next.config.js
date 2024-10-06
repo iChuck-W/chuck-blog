@@ -17,7 +17,7 @@ const ContentSecurityPolicy = `
 `
 
 const securityHeaders = [
-  // 嵌入 iframe 条件 1/2
+  // 嵌入 iframe 条件
   // https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP
   //{
   //  key: 'Content-Security-Policy',
@@ -74,11 +74,11 @@ module.exports = () => {
     },
     images: {
       dangerouslyAllowSVG: true,
-      domains: ['fyllu8frywoegleh.public.blob.vercel-storage.com', 'chuck-gallery.vercel.app'],
+      domains: ['fyllu8frywoegleh.public.blob.vercel-storage.com', 'chuckgallery.vercel.app'],
       remotePatterns: [
         {
           protocol: 'https',
-          hostname: 'picsum.photos', // 嵌入 iframe 条件 2/2：**.doubanio.com，原值：'picsum.photos'
+          hostname: 'picsum.photos',
         },
       ],
       unoptimized,

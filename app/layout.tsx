@@ -2,8 +2,8 @@ import 'css/app.css'
 import 'css/tailwind.css'
 import 'pliny/search/algolia.css'
 // import 'remark-github-blockquote-alert/alert.css'
-// import { Space_Grotesk } from 'next/font/google'
-// import { Analytics } from 'pliny/analytics'
+import { Analytics, AnalyticsConfig } from 'pliny/analytics'
+import { Space_Grotesk } from 'next/font/google'
 import ChatbotDialog from '@/components/ChatbotDialog'
 import Footer from '@/components/Footer'
 import Header from '@/components/Header'
@@ -14,11 +14,11 @@ import type { Metadata } from 'next' // import { Metadata } from 'next'
 import { SearchProvider, SearchConfig } from 'pliny/search'
 import { ThemeProviders } from './theme-providers'
 
-//const space_grotesk = Space_Grotesk({
-//  subsets: ['latin'],
-//  display: 'swap',
-//  variable: '--font-space-grotesk',
-//})
+const space_grotesk = Space_Grotesk({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-space-grotesk',
+})
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteMetadata.siteUrl),
@@ -61,17 +61,25 @@ export const metadata: Metadata = {
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const basePath = process.env.BASE_PATH || ''
+
   return (
-    <html lang="zh-CN">
+    <html 
+      lang={siteMetadata.language}
+      className={`${space_grotesk.variable} scroll-smooth`}
+      suppressHydrationWarning
+    >
       <link rel="apple-touch-icon" href="/static/favicons/favicon.ico" />
       <link rel="icon" href="/static/favicons/favicon.ico" />
-      <link rel="manifest" href="/static/favicons/site.webmanifest" />
+      <link rel="manifest" href={`${basePath}/static/favicons/site.webmanifest`} />
+      <link rel="mask-icon" href={`${basePath}/static/favicons/favicon.ico`} color="#5bbad5" />
       <meta name="msapplication-TileColor" content="#abb581" />
       <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fff" />
       <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000" />
-      <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
+      <link rel="alternate" type="application/rss+xml" href={`${basePath}/feed.xml`} />
       <body className="bg-white text-black antialiased dark:bg-dark dark:text-hans-400">
         <ThemeProviders>
+          <Analytics analyticsConfig={siteMetadata.analytics as AnalyticsConfig} />
           <SectionContainer>
             <div className="flex h-screen flex-col justify-between">
               <SearchProvider searchConfig={siteMetadata.search as SearchConfig}>
@@ -79,11 +87,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <main className="mb-auto">{children}</main>
                 <div className="bg-image-container bg-image-container-one"></div>
                 <div className="bg-image-container bg-image-container-two h-3/6 w-3/6 md:h-3/6 md:w-3/6 "></div>
-                {/* <div className="bg-image-container bg-image-container-three"></div> */}
               </SearchProvider>
               <Footer />
             </div>
-            <ChatbotDialog />
+            <ChatbotDialog /> 
           </SectionContainer>
         </ThemeProviders>
       </body>
