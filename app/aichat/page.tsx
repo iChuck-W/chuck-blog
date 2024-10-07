@@ -1,6 +1,9 @@
 import Head from 'next/head'
 import React from 'react'
 import 'css/app.css'
+import { genPageMetadata } from 'app/seo'
+
+export const metadata = genPageMetadata({ title: 'aichat' })
 
 export default function Home() {
   return (
@@ -13,41 +16,44 @@ export default function Home() {
         ></meta>
       </Head>
 
+      <div className="space-y-2 pb-8 pt-6 md:space-y-5">
+        <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-3xl sm:leading-10 md:text-3xl md:leading-14">
+          <strong>📇 说明</strong>
+        </h1>
+      </div>
       <div>
-        <h2>
-          <strong>📃 说明</strong>
-        </h2>
-        <br />
         <div className="type-wrap">
           <span style={{ whiteSpace: 'pre' }} />
           <li>
+            点击进入
             <a href="https://www.chuckblog.com/blog/240612-Introduction" target="_blank">
               {' '}
-              点击进入
               <b>
-                <u>使用说明文</u>
+                📃<u>使用说明文</u>
               </b>
             </a>
-            。除了常规问答，新增了摘录网页内容，生成可下载编辑文件的功能。
+            。除了常规问答，新增了模型解读网页内容，生成可下载供编辑文件的功能。
             <strong>以下是招标内容摘录示例：</strong>
           </li>
           <p>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;
             <a
               href="https://ichuck-w.github.io/shared-documents/#/20240831_070618_4392.md"
               target="_blank"
             >
-              <u>浏览链接</u>
+              {' '}
+              ○ 📃 <u>浏览链接</u>
             </a>
           </p>
           <p>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;
             <a
               href="https://raw.githubusercontent.com/ichuck-w/shared-documents/main/docs/20240831_070618_4392.md"
               target="_blank"
               download="20240831_070618_4392.md"
             >
-              <u>下载链接</u>
+              {' '}
+              ○ 📃 <u>下载链接</u>
             </a>
           </p>
           <li>
@@ -55,7 +61,7 @@ export default function Home() {
             浏览器会拒绝连接部分入口，应该是【设置-隐私、搜索和服务-防止跟踪】的配置问题。
           </li>
           <li>
-            做了头部 AI 问答入口整合，减少跳转，方便对比。
+            页面整合了头部 AI 问答入口，减少跳转，方便对比。
             <b>以下是无法嵌入的入口，点击后可跳转：</b>
           </li>
           <p>
@@ -103,7 +109,11 @@ export default function Home() {
         </div>
       </div>
 
-      <br />
+      <div className="space-y-2 pb-8 pt-6 md:space-y-5">
+        <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-3xl sm:leading-10 md:text-3xl md:leading-14">
+          <strong>📇 对话入口</strong>
+        </h1>
+      </div>
       <a target="_blank" href="https://www.aibangxuanxing.com/" className="custom-link">
         🧑‍🏭 工业品智能专家
       </a>
@@ -111,7 +121,7 @@ export default function Home() {
       <iframe
         title="agent"
         src="https://udify.app/chat/M51MSDFgiWlt6esT/"
-        height="500px"
+        height="700px"
         width="100%"
         className="iframe"
       ></iframe>
@@ -124,7 +134,7 @@ export default function Home() {
       <iframe
         title="agent"
         src="https://chat.deepseek.com"
-        height="500px"
+        height="700px"
         width="100%"
         className="iframe"
       ></iframe>
@@ -137,7 +147,7 @@ export default function Home() {
       <iframe
         title="agent"
         src="https://kimi.moonshot.cn"
-        height="500px"
+        height="700px"
         width="100%"
         className="iframe"
       ></iframe>
@@ -150,7 +160,7 @@ export default function Home() {
       <iframe
         title="agent"
         src="https://yiyan.baidu.com"
-        height="500px"
+        height="700px"
         width="100%"
         className="iframe"
       ></iframe>
