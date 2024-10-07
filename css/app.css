@@ -24,6 +24,15 @@
     0 6px 20px rgba(0, 0, 0, 0.1);
   border-radius: 12px; /* 圆角半径 */
 }
+a {
+  color: blue; /* 链接颜色 */
+  text-decoration: underline; /* 下划线 */
+  text-decoration-color: red; /* 下划线颜色 */
+}
+a:hover {
+  color: blue; /* 鼠标悬停时的颜色 */
+  text-decoration-color: blue; /* 鼠标悬停时的下划线颜色 */
+}
 .bg-image-container {
   width: 220px;
   height: 220px;
