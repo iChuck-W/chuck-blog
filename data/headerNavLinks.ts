@@ -1,9 +1,9 @@
 const headerNavLinks = [
-  { href: '/', title: '首页' },
-  { href: '/blog', title: '博客' },
+  { href: '/', title: '' },
+  { href: '/blog', title: 'Blog' },
   { href: '/aichat', title: '🧑‍🏭 AiChat' },
-  { href: 'https://www.ichuck.top/grid', title: '🌏 图库' },
-  //  { href: '/tags', title: '标签' },
+  { href: 'https://www.ichuck.top/grid', title: '🌏 Gallery' },
+  //  { href: '/tags', title: 'Tags' },
   //  { href: '/projects', title: 'Projects' },
   //  { href: '/about', title: 'About' },
 ]
