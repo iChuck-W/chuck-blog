@@ -9,9 +9,14 @@ const Greetings = () => {
 
   React.useEffect(() => {
     const options = {
-      strings: ['在这个瞬息万变的时代', '拥抱变化', '拥抱不确定性', '......'],
-      typeSpeed: 40,
-      backSpeed: 40,
+      strings: [
+        '在这个瞬息万变的时代 In these rapidly changing times ',
+        '拥抱变化 Embrace change',
+        '拥抱不确定性 Embrace uncertainty',
+        '......',
+      ],
+      typeSpeed: 5,
+      backSpeed: 5,
       loop: true,
     }
 
@@ -29,6 +34,7 @@ const Greetings = () => {
     <div className="lg:mb-10 lg:mt-10">
       <h1 className="clip  text-7xl font-extrabold text-transparent dark:to-blue-500">
         Hello Everyone,
+        <br />
       </h1>
       <div className="prose dark:prose-dark lg:prose-lg">
         <br />
@@ -38,8 +44,6 @@ const Greetings = () => {
 
         <div className="type-wrap">
           <span style={{ whiteSpace: 'pre' }} ref={el} />
-          <br />
-          <p> </p>
         </div>
       </div>
     </div>

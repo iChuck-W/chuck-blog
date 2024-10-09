@@ -1,9 +1,10 @@
 /** @type {import("pliny/config").PlinyConfig } */
 const siteMetadata = {
-  title: 'Chuck ∞ 拥抱变化',
+  title: 'Chuck | Embracing Change ',
   author: 'Chuck',
-  headerTitle: 'Chuck',
-  description: '拥抱时代变革，记录成长经历。',
+  headerTitle: 'Chuck', // 页面左上角
+  description:
+    'Think about the role of artificial intelligence in e-commerce shopping guide and itinerary planning.',
   language: 'en-us', //en-us, zh-CN
   theme: 'light', // system, dark or light
   siteUrl: 'https://ichuck.top',
