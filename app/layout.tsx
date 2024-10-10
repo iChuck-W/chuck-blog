@@ -11,7 +11,7 @@ import React from 'react'
 import SectionContainer from '@/components/SectionContainer'
 import siteMetadata from '@/data/siteMetadata'
 import type { Metadata } from 'next' // import { Metadata } from 'next'
-import { SearchProvider, SearchConfig } from 'pliny/search'
+import { SearchProvider } from '@/components/SearchProvider'
 import { ThemeProviders } from './theme-providers'
 
 const space_grotesk = Space_Grotesk({
@@ -82,7 +82,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <Analytics analyticsConfig={siteMetadata.analytics as AnalyticsConfig} />
           <SectionContainer>
             <div className="flex h-screen flex-col justify-between">
-              <SearchProvider searchConfig={siteMetadata.search as SearchConfig}>
+              <SearchProvider>
                 <Header />
                 <main className="mb-auto">{children}</main>
                 <div className="bg-image-container bg-image-container-one"></div>
