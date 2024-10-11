@@ -3,16 +3,19 @@ import React from 'react'
 import 'css/app.css'
 import { genPageMetadata } from 'app/seo'
 
+import Image from 'next/image'
 import LayoutWithSidebar from '@/components/LayoutWithSidebar'
 
 export const metadata = genPageMetadata({ title: 'aichat' })
 
 const SidebarContent = () => (
   <div>
-    <img
-      alt="Logo"
+    <Image
       src="/static/favicons/logo-tool.svg"
+      alt="Landscape picture"
       className="mx-auto mb-12 mt-12 h-12 w-12"
+      width={75}
+      height={75}
     />
     <ul>
       <li className="text-mid mb-4">

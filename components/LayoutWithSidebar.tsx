@@ -10,8 +10,10 @@ interface LayoutWithSidebarProps {
 const LayoutWithSidebar: React.FC<LayoutWithSidebarProps> = ({ sidebar, children }) => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false)
 
-  const toggleSidebar = () => {
-    setIsSidebarOpen(!isSidebarOpen)
+  const toggleSidebar = (e: React.MouseEvent | React.KeyboardEvent) => {
+    if (e.type === 'click' || (e as React.KeyboardEvent).key === 'Enter') {
+      setIsSidebarOpen(!isSidebarOpen)
+    }
   }
 
   useEffect(() => {
@@ -31,7 +33,13 @@ const LayoutWithSidebar: React.FC<LayoutWithSidebarProps> = ({ sidebar, children
   }, [isSidebarOpen])
 
   return (
-    <div className="flex" onClick={toggleSidebar}>
+    <div
+      className="flex"
+      onClick={toggleSidebar}
+      role="button"
+      tabIndex={0}
+      onKeyDown={toggleSidebar}
+    >
       <div
         className={`sidebar fixed left-0 top-0 h-full ${isSidebarOpen ? 'active' : 'hidden'} md:block`}
       >
@@ -47,7 +55,6 @@ const LayoutWithSidebar: React.FC<LayoutWithSidebarProps> = ({ sidebar, children
         className="menu-toggle menu-icon fixed left-4 top-4 md:hidden"
         onClick={toggleSidebar}
         aria-label={isSidebarOpen ? 'Close menu' : 'Open menu'}
-        role="button"
       >
         {isSidebarOpen ? (
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="32" width="32">
