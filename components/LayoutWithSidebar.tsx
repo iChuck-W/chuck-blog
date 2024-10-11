@@ -11,6 +11,7 @@ const LayoutWithSidebar: React.FC<LayoutWithSidebarProps> = ({ sidebar, children
   const [isSidebarOpen, setIsSidebarOpen] = useState(false)
 
   const toggleSidebar = (e: React.MouseEvent | React.KeyboardEvent) => {
+    // 允许在点击或按下Enter键时切换侧边栏
     if (e.type === 'click' || (e as React.KeyboardEvent).key === 'Enter') {
       setIsSidebarOpen(!isSidebarOpen)
     }
@@ -33,15 +34,14 @@ const LayoutWithSidebar: React.FC<LayoutWithSidebarProps> = ({ sidebar, children
   }, [isSidebarOpen])
 
   return (
-    <div
-      className="flex"
-      onClick={toggleSidebar}
-      role="button"
-      tabIndex={0}
-      onKeyDown={toggleSidebar}
-    >
+    <div className="flex">
       <div
         className={`sidebar fixed left-0 top-0 h-full ${isSidebarOpen ? 'active' : 'hidden'} md:block`}
+        role="button"
+        tabIndex={0}
+        onClick={toggleSidebar}
+        onKeyDown={toggleSidebar}
+        aria-label={isSidebarOpen ? 'Close menu' : 'Open menu'}
       >
         {sidebar}
       </div>
