@@ -1,12 +1,12 @@
 import Head from 'next/head'
 import React from 'react'
 import 'css/app.css'
-import { genPageMetadata } from 'app/seo'
 
 import Image from 'next/image'
 import LayoutWithSidebar from '@/components/LayoutWithSidebar'
 
-export const metadata = genPageMetadata({ title: 'aichat' })
+// import { genPageMetadata } from 'app/seo'
+// export const metadata = genPageMetadata({ title: 'aichat' })
 
 const SidebarContent = () => (
   <div>
