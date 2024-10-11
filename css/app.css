@@ -34,6 +34,7 @@ a:hover {
   color: blue; /* 鼠标悬停时的颜色 */
   text-decoration-color: blue; /* 鼠标悬停时的下划线颜色 */
 }
+
 /* 左侧边栏样式 */
 .sidebar {
   align-items: center; /* 子元素水平居中 */
@@ -53,6 +54,16 @@ a:hover {
   top: 0; /* 顶部对齐 */
   left: 0; /* 左侧对齐 */
   height: 100vh; /* 高度占满整个视口 */
+  z-index: 1000; /* 确保侧边栏在最上层 */
+}
+/* 鼠标悬停时的样式 */
+.sidebar a:hover {
+  color: white; /* 文本颜色：白色 */
+  background-color: #324abb; /* 背景颜色：蓝色 */
+}
+/* 左侧边栏展开时的样式 */
+.sidebar.active {
+  width: 200px; /* 展开后的宽度 */
 }
 /* 左侧边栏中内容样式 */
 .sidebar a {
@@ -63,13 +74,45 @@ a:hover {
   display: block; /* 显示方式：块级盒子 */
   font-weight: bold; /* 文本：粗体 */
   margin-bottom: 12px; /* 块级盒子的间隔 */
-  padding: 10px 10px 10px 20px; /* 块级盒子内边距 */
+  padding: 10px 20px; /* 块级盒子内边距 */
   text-decoration: none; /* 下划线：无 */
   text-align: left; /* 文本对齐方式：左对齐 */
   transition:
     background-color 0.3s,
     color 0.3s; /* 添加过渡效果 */
-  width: 100%; /* 宽度占比 */
+  width: 100%;
+}
+
+/* 按键 */
+.menu-toggle {
+  background-color: rgba(255, 255, 255, 0.5); /* 半透明背景色 */
+  border-radius: 10px;
+  color: black;
+  cursor: pointer;
+  display: none; /* 默认不显示 */
+  font-weight: bold;
+  padding: 10px;
+  text-align: center;
+  z-index: 1001;
+}
+/* 仅显示图标的按钮样式 */
+.menu-icon {
+  background: none;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 1001;
+}
+.menu-icon svg {
+  fill: currentColor; /* 使图标颜色与文本颜色保持一致 */
+}
+@media screen and (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+    position: fixed;
+    top: 30px;
+    left: 10px;
+  }
 }
 
 .bg-image-container {
