@@ -1,12 +1,12 @@
 import Head from 'next/head'
 import React from 'react'
 import 'css/app.css'
+import { genPageMetadata } from 'app/seo'
 
 import Image from 'next/image'
 import LayoutWithSidebar from '@/components/LayoutWithSidebar'
 
-// import { genPageMetadata } from 'app/seo'
-// export const metadata = genPageMetadata({ title: 'aichat' })
+export const metadata = genPageMetadata({ title: 'aichat' })
 
 const SidebarContent = () => (
   <div>
@@ -42,7 +42,7 @@ const SidebarContent = () => (
 
 export default function Home() {
   return (
-    <LayoutWithSidebar sidebar={<SidebarContent />}>
+    <>
       <Head>
         <title>🧑‍🏭 工业品智能专家 · 专注工业品使用指导和采购选型 </title>
         <meta
@@ -51,12 +51,13 @@ export default function Home() {
         ></meta>
       </Head>
 
-      <div id="section1" className="space-y-2 pb-8 pt-6 md:space-y-5">
-        <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-3xl sm:leading-10 md:text-3xl md:leading-14">
-          <strong>📇 说明</strong>
-        </h1>
-      </div>
-      <div>
+      <LayoutWithSidebar sidebar={<SidebarContent />}>
+        <div id="section1" className="space-y-2 pb-8 pt-6 md:space-y-5">
+          <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-3xl sm:leading-10 md:text-3xl md:leading-14">
+            <strong>📇 说明</strong>
+          </h1>
+        </div>
+
         <div className="type-wrap">
           <span style={{ whiteSpace: 'pre' }} />
           <li>
@@ -143,81 +144,81 @@ export default function Home() {
             </a>
           </p>
         </div>
-      </div>
 
-      <div id="section2" className="space-y-2 pb-8 pt-6 md:space-y-5">
-        <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-3xl sm:leading-10 md:text-3xl md:leading-14">
-          <strong>📇 对话入口</strong>
-        </h1>
-      </div>
+        <div id="section2" className="space-y-2 pb-8 pt-6 md:space-y-5">
+          <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-3xl sm:leading-10 md:text-3xl md:leading-14">
+            <strong>📇 对话入口</strong>
+          </h1>
+        </div>
 
-      <div id="section3">
-        <a
-          target="_blank"
-          href="https://www.aibangxuanxing.com/"
-          className="custom-link text-xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-3xl sm:leading-10 md:text-3xl md:leading-14"
-        >
-          🧑‍🏭 工业品智能专家
-        </a>
-        <iframe
-          title="agent"
-          src="https://udify.app/chat/M51MSDFgiWlt6esT/"
-          height="700px"
-          width="100%"
-          className="iframe"
-        ></iframe>
-      </div>
+        <div id="section3">
+          <a
+            target="_blank"
+            href="https://www.aibangxuanxing.com/"
+            className="custom-link text-xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-3xl sm:leading-10 md:text-3xl md:leading-14"
+          >
+            🧑‍🏭 工业品智能专家
+          </a>
+          <iframe
+            title="agent"
+            src="https://udify.app/chat/M51MSDFgiWlt6esT/"
+            height="700px"
+            width="100%"
+            className="iframe"
+          ></iframe>
+        </div>
 
-      <div id="section4">
-        <a
-          target="_blank"
-          href="https://chat.deepseek.com"
-          className="custom-link custom-link text-xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-3xl sm:leading-10 md:text-3xl md:leading-14"
-        >
-          🧑‍💻 DeepSeek
-        </a>
-        <iframe
-          title="agent"
-          src="https://chat.deepseek.com"
-          height="700px"
-          width="100%"
-          className="iframe"
-        ></iframe>
-      </div>
+        <div id="section4">
+          <a
+            target="_blank"
+            href="https://chat.deepseek.com"
+            className="custom-link custom-link text-xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-3xl sm:leading-10 md:text-3xl md:leading-14"
+          >
+            🧑‍💻 DeepSeek
+          </a>
+          <iframe
+            title="agent"
+            src="https://chat.deepseek.com"
+            height="700px"
+            width="100%"
+            className="iframe"
+          ></iframe>
+        </div>
 
-      <div id="section5">
-        <a
-          target="_blank"
-          href="https://kimi.moonshot.cn"
-          className="custom-link custom-link text-xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-3xl sm:leading-10 md:text-3xl md:leading-14"
-        >
-          🧑‍💻 Kimi.ai
-        </a>
-        <iframe
-          title="agent"
-          src="https://kimi.moonshot.cn"
-          height="700px"
-          width="100%"
-          className="iframe"
-        ></iframe>
-      </div>
+        <div id="section5">
+          <a
+            target="_blank"
+            href="https://kimi.moonshot.cn"
+            className="custom-link custom-link text-xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-3xl sm:leading-10 md:text-3xl md:leading-14"
+          >
+            🧑‍💻 Kimi.ai
+          </a>
+          <iframe
+            title="agent"
+            src="https://kimi.moonshot.cn"
+            height="700px"
+            width="100%"
+            className="iframe"
+          ></iframe>
+        </div>
 
-      <div id="section6">
-        <a
-          target="_blank"
-          href="https://yiyan.baidu.com"
-          className="custom-link custom-link text-xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-3xl sm:leading-10 md:text-3xl md:leading-14"
-        >
-          🧑‍💻 文心一言
-        </a>
-        <iframe
-          title="agent"
-          src="https://yiyan.baidu.com"
-          height="700px"
-          width="100%"
-          className="iframe"
-        ></iframe>
-      </div>
-    </LayoutWithSidebar>
+        <div id="section6">
+          <a
+            target="_blank"
+            href="https://yiyan.baidu.com"
+            className="custom-link custom-link text-xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-3xl sm:leading-10 md:text-3xl md:leading-14"
+          >
+            🧑‍💻 文心一言
+          </a>
+          <iframe
+            title="agent"
+            src="https://yiyan.baidu.com"
+            height="700px"
+            width="100%"
+            className="iframe"
+          ></iframe>
+        </div>
+      </LayoutWithSidebar>
+    </>
   )
 }

@@ -14,11 +14,8 @@ interface LayoutWithSidebarProps {
 const LayoutWithSidebar: React.FC<LayoutWithSidebarProps> = ({ sidebar, children }) => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false)
 
-  const toggleSidebar = (e: React.MouseEvent | React.KeyboardEvent) => {
-    // 允许在点击或按下Enter键时切换侧边栏
-    if (e.type === 'click' || (e as React.KeyboardEvent).key === 'Enter') {
-      setIsSidebarOpen(!isSidebarOpen)
-    }
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen)
   }
 
   useEffect(() => {
