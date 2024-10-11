@@ -17,7 +17,8 @@ const LayoutWithSidebar: React.FC<LayoutWithSidebarProps> = ({ sidebar, children
   useEffect(() => {
     // 点击侧边栏之外的区域时收起侧边栏
     const handleOutsideClick = (e: MouseEvent) => {
-      if (isSidebarOpen && !e.target.closest('.sidebar, .menu-toggle')) {
+      const target = e.target as HTMLElement
+      if (isSidebarOpen && !target.closest('.sidebar') && !target.closest('.menu-toggle')) {
         setIsSidebarOpen(false)
       }
     }
@@ -36,7 +37,7 @@ const LayoutWithSidebar: React.FC<LayoutWithSidebarProps> = ({ sidebar, children
       >
         {sidebar}
       </div>
-      <div className="md:w-9/10 flex w-full items-center justify-center p-4 md:ml-64">
+      <div className="md:w-9/10 flex w-full items-center justify-center p-4 md:ml-32">
         <div className="w-full max-w-4xl" onClick={(e) => e.stopPropagation()}>
           {children}
         </div>
