@@ -13,6 +13,7 @@
   );
   --vp-home-hero-image-filter: blur(80px);
 }
+
 .custom-link {
   display: block;
   margin-bottom: 20px; /* 标题和嵌入框之间的间距 */
@@ -33,6 +34,44 @@ a:hover {
   color: blue; /* 鼠标悬停时的颜色 */
   text-decoration-color: blue; /* 鼠标悬停时的下划线颜色 */
 }
+/* 左侧边栏样式 */
+.sidebar {
+  align-items: center; /* 子元素水平居中 */
+  border-radius: 10px; /* 边框圆角 */
+  box-sizing: border-box; /* 边框和内边距计算在宽度内 */
+  background: linear-gradient(
+    280deg,
+    #f5f5f5 10%,
+    #e0e0e0 80%
+  ); /* 背景：从280度的方向开始线性渐变，渐变的颜色从浅灰色 #f5f5f5 开始，在渐变的10%位置。渐变的颜色过渡到稍深的灰色 #e0e0e0，在渐变的 100% 位置。 */
+  color: white; /* 设置侧边栏文本背景颜色：白色 */
+  display: flex;
+  flex-direction: column; /* 子元素垂直排列 */
+  padding: 10px; /* 侧边栏内边距 */
+  width: 200px; /* 侧边栏的宽度 */
+  position: fixed; /* 固定位置 */
+  top: 0; /* 顶部对齐 */
+  left: 0; /* 左侧对齐 */
+  height: 100vh; /* 高度占满整个视口 */
+}
+/* 左侧边栏中内容样式 */
+.sidebar a {
+  align-items: center;
+  background-color: white; /* 背景颜色：白色 */
+  border-radius: 10px;
+  color: black; /* 文本颜色：黑色 */
+  display: block; /* 显示方式：块级盒子 */
+  font-weight: bold; /* 文本：粗体 */
+  margin-bottom: 12px; /* 块级盒子的间隔 */
+  padding: 10px 10px 10px 20px; /* 块级盒子内边距 */
+  text-decoration: none; /* 下划线：无 */
+  text-align: left; /* 文本对齐方式：左对齐 */
+  transition:
+    background-color 0.3s,
+    color 0.3s; /* 添加过渡效果 */
+  width: 100%; /* 宽度占比 */
+}
+
 .bg-image-container {
   width: 220px;
   height: 220px;
