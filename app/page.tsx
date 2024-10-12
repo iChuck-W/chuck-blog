@@ -13,19 +13,25 @@ export default function Home() {
       <div className="type-wrap">
         <span style={{ whiteSpace: 'pre' }} />
         <p>
-          这是一个以品牌官网为资讯中心的对话助手，<b>右下角对话按键</b>
-          💬会在全网的页面保持呈现，可以随时点击，开始对话。
+          这是一个以品牌官网为资讯中心的对话助手，<b>右下角对话按键</b> 💬
+          会在所有的页面保持呈现，可以随时点击，开始对话。
           <br />
         </p>
       </div>
+
       <br />
-      <iframe
-        title="agent"
-        src="https://udify.app/chat/M51MSDFgiWlt6esT/"
-        height="500px"
-        width="100%"
-        className="iframe"
-      ></iframe>
+      <div style={{ textAlign: 'center' }}>
+        <iframe
+          title="agent"
+          src="https://udify.app/chat/M51MSDFgiWlt6esT/"
+          height="700px"
+          width="100%"
+          className="iframe"
+          style={{ display: 'inline-block', margin: 'auto' }}
+        ></iframe>
+      </div>
+
+      <br />
       <br />
       <a target="_blank" href="https://www.ichuck.top/grid" className="custom-link">
         🌏 图库
@@ -40,14 +46,17 @@ export default function Home() {
         </p>
       </div>
       <br />
-      <iframe
-        title="agent"
-        src="https://www.ichuck.top/grid"
-        height="500px"
-        width="100%"
-        className="iframe"
-      ></iframe>
-      <br />
+
+      <div style={{ textAlign: 'center' }}>
+        <iframe
+          title="photos"
+          src="https://www.ichuck.top/grid"
+          height="700px"
+          width="100%"
+          className="iframe"
+          style={{ display: 'inline-block', margin: 'auto' }}
+        ></iframe>
+      </div>
     </>
   )
 }
