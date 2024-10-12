@@ -131,14 +131,14 @@ export default function PostLayout({
             </div>
             <footer>
               <h2 className="pt-6 text-xs font-bold uppercase tracking-wide text-gray-500 dark:text-gray-400">
-                目录
+                Table of Contents
               </h2>
               <TOCInline asDisclosure={false} toc={toc} />
               <div className="divide-gray-200 text-sm font-medium leading-5 dark:divide-gray-700 xl:col-start-1 xl:row-start-2 xl:divide-y">
                 {tags && (
                   <div className="py-4 xl:py-8 ">
                     <h2 className="mb-4 text-xs font-bold uppercase tracking-wide text-gray-500 dark:text-gray-400">
-                      标签
+                      Tags
                     </h2>
                     <div className="flex flex-wrap">
                       {tags.map((tag) => (
@@ -152,7 +152,7 @@ export default function PostLayout({
                     {prev && prev.path && (
                       <div>
                         <h2 className="text-xs font-bold uppercase tracking-wide text-gray-500 dark:text-gray-400">
-                          上一篇文章
+                          Previous Article
                         </h2>
                         <div className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400">
                           <Link href={`/${prev.path}`}>{prev.title}</Link>
@@ -162,7 +162,7 @@ export default function PostLayout({
                     {next && next.path && (
                       <div>
                         <h2 className="text-xs font-bold uppercase tracking-wide text-gray-500 dark:text-gray-400">
-                          下一篇文章
+                          Next Article
                         </h2>
                         <div className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400">
                           <Link href={`/${next.path}`}>{next.title}</Link>
@@ -178,7 +178,7 @@ export default function PostLayout({
                   className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
                   aria-label="Back to the blog"
                 >
-                  &larr; 回到目录
+                  &larr; Back to the blog
                 </Link>
               </div>
             </footer>
