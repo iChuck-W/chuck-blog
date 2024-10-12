@@ -7,7 +7,7 @@ const siteMetadata = {
     'Think about the role of artificial intelligence in e-commerce shopping guide and itinerary planning.',
   language: 'en-us', //en-us, zh-CN
   theme: 'light', // system, dark or light
-  siteUrl: 'https://ichuck.top',
+  siteUrl: 'https://www.chuckblog.com/',
   siteRepo: 'https://github.com/timlrx/tailwind-nextjs-starter-blog',
   siteLogo: '/data/logo/logo-C.svg',
   image: '/static/images/chuck.jpg',

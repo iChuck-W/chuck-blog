@@ -74,7 +74,7 @@ module.exports = () => {
     },
     images: {
       dangerouslyAllowSVG: true,
-      domains: ['fyllu8frywoegleh.public.blob.vercel-storage.com', 'chuckgallery.vercel.app'],
+      domains: ['ty9rlllq4oeuztdx.public.blob.vercel-storage.com', 'chuckphotos.vercel.app'],
       remotePatterns: [
         {
           protocol: 'https',
