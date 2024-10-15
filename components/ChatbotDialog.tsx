@@ -12,12 +12,12 @@ const ChatbotDialog = () => {
         dangerouslySetInnerHTML={{
           __html: `
           window.difyChatbotConfig = {
-            token: 'M51MSDFgiWlt6esT'
+            token: 'FldqA85Ns4qIvqrL'
           };
         `,
         }}
       />
-      <script src="https://udify.app/embed.min.js" id="M51MSDFgiWlt6esT" defer />
+      <script src="https://udify.app/embed.min.js" id="FldqA85Ns4qIvqrL" defer />
       <style>{`
         #dify-chatbot-bubble-button {
           background-color: #0000FF !important;
