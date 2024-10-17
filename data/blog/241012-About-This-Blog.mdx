@@ -1,0 +1,214 @@
+---
+title: '搭建个人博客（官网 🤔）流程梳理'
+authors: ['default']
+date: '2024-10-12'
+lastmod: '2024-10-13'
+tags: ['博客', '中文']
+draft: false
+layout: PostLayout
+summary: '我的观点：个人博客应该作为一个人的开放型资讯中心 🤔 。当各大平台都将数据封锁作为资产~'
+---
+
+## 目录
+
+<TOCInline toc={props.toc} exclude="Introduction" />
+
+## 资料集
+
+- 以下是和参考模板的主要区别
+
+  - 嵌入模型对话框和图库，需要修改 next.config.js 中安全配置
+  - 全站页面右下角嵌入对话框按键
+  - 右上角主题切换去掉 system，只保留 light 和 dark
+  - 标题搜索配置为全文搜索
+
+- 参考模板：[tailwind-nextjs-starter-blog](https://github.com/timlrx/tailwind-nextjs-starter-blog)
+
+  - 评论配置：[giscus](https://github.com/giscus/giscus/blob/main/README.zh-CN.md)
+  - 纯照片博客：[exif-photo-blog](https://github.com/sambecker/exif-photo-blog)
+  - 整体配色参考：[hans-nextjs-blog](https://github.com/hansking98/hans-nextjs-blog)
+
+- Vercel 部署，然后用 Cloudflare 托管域名：[https://zhuanlan.zhihu.com/p/708252760](https://zhuanlan.zhihu.com/p/708252760)
+
+## 流程注意事项
+
+### tailwind-nextjs-starter-blog
+
+- 配置文件修改
+
+  - [contentlayer.config.ts](https://www.contentlayer.dev/docs/getting-started) :使用的内容源和 MDX 插件的定义。
+    比如 `export const Authors \= defineDocumentType` 增加：`zhihu: { type: 'string' }`。
+  - next.config.js: 与 Next.js 相关的配置。
+  - const securityHeaders 会屏蔽页面嵌入框。
+  - domains 增加自己资源根域名。
+
+- 文件夹 data：包括 mdx 文件，就是自己的内容文件，文件顶部格式 [Front matter | Hugo](https://gohugo.io/content-management/front-matter/) 需要注意的是如果加入 layout 字段，无法显示目录。
+
+- 本地项目同步到 Vercel 前需要运行 Prettier 格式化代码：`npx prettier --write .`
+
+<Image alt="000" src="/illustration/2024-002/000.jpg" width={400} height={200} />
+
+### exif-photo-blog
+
+- 流程不难，注意的是修改配置后项目在 Vercel 中需要 Redeploy 才能生效。
+- 我托管的 Vercel Blob 还在测试阶段，上传照片流程很慢，而且给照片打标签和命名都要再次手动操作。
+
+<Image alt="001" src="/illustration/2024-002/001.jpg" width={400} height={200} />
+
+### giscus
+
+- 利用 GitHub Discussions 实现 Blog 的评论系统，配置页面有中文版：[giscus](https://giscus.app/zh-CN)
+
+## 附：项目文件夹结构
+
+- [tailwind-nextjs-starter-blog](https://github.com/timlrx/tailwind-nextjs-starter-blog) 项目文件夹结构。
+
+```
+[.devcontainer]
+    devcontainer.json
+.env.example
+.eslintignore
+.eslintrc.js
+.gitattributes
+[.github]
+    FUNDING.yml
+    [ISSUE_TEMPLATE]
+        bug_report.md
+        feature_request.md
+    [workflows]
+        pages.yml
+.gitignore
+[.husky]
+    .gitignore
+    pre-commit
+[.vscode]
+    settings.json
+[.yarn]
+    [releases]
+        yarn-3.6.1.cjs
+.yarnrc.yml
+LICENSE
+README.md
+[app]
+    Main.tsx
+    [about]
+        page.tsx
+    [api]
+        [newsletter]
+            route.ts
+    [blog]
+        [[...slug]]
+            page.tsx
+        [page]
+            [[page]]
+                page.tsx
+        page.tsx
+    layout.tsx
+    not-found.tsx
+    page.tsx
+    [projects]
+        page.tsx
+    robots.ts
+    seo.tsx
+    sitemap.ts
+    tag-data.json
+    [tags]
+        [[tag]]
+            page.tsx
+        page.tsx
+    theme-providers.tsx
+[components]
+    Card.tsx
+    Comments.tsx
+    Footer.tsx
+    Header.tsx
+    Image.tsx
+    LayoutWrapper.tsx
+    Link.tsx
+    MDXComponents.tsx
+    MobileNav.tsx
+    PageTitle.tsx
+    ScrollTopAndComment.tsx
+    SearchButton.tsx
+    SectionContainer.tsx
+    TableWrapper.tsx
+    Tag.tsx
+    ThemeSwitch.tsx
+    [social-icons]
+        icons.tsx
+        index.tsx
+contentlayer.config.ts
+[css]
+    prism.css
+    tailwind.css
+[data]
+    [authors]
+        default.mdx
+        sparrowhawk.mdx
+    [blog]
+        code-sample.mdx
+        deriving-ols-estimator.mdx
+        github-markdown-guide.mdx
+        guide-to-using-images-in-nextjs.mdx
+        introducing-tailwind-nextjs-starter-blog.mdx
+        my-fancy-title.mdx
+        [nested-route]
+            introducing-multi-part-posts-with-nested-routing.mdx
+        new-features-in-v1.mdx
+        pictures-of-canada.mdx
+        release-of-tailwind-nextjs-starter-blog-v2.0.mdx
+        the-time-machine.mdx
+    headerNavLinks.ts
+    logo.svg
+    projectsData.ts
+    references-data.bib
+    siteMetadata.js
+[faq]
+    custom-mdx-component.md
+    customize-kbar-search.md
+jsconfig.json
+[layouts]
+    AuthorLayout.tsx
+    ListLayout.tsx
+    ListLayoutWithTags.tsx
+    PostBanner.tsx
+    PostLayout.tsx
+    PostSimple.tsx
+next-env.d.ts
+next.config.js
+package.json
+postcss.config.js
+prettier.config.js
+[public]
+    [static]
+        [favicons]
+            android-chrome-96x96.png
+            apple-touch-icon.png
+            browserconfig.xml
+            favicon-16x16.png
+            favicon-32x32.png
+            favicon.ico
+            mstile-150x150.png
+            safari-pinned-tab.svg
+            site.webmanifest
+        [images]
+            avatar.png
+            [canada]
+                lake.jpg
+                maple.jpg
+                mountains.jpg
+                toronto.jpg
+            github-traffic.png
+            google.png
+            logo.png
+            ocean.jpeg
+            sparrowhawk-avatar.jpg
+            time-machine.jpg
+            twitter-card.png
+[scripts]
+    postbuild.mjs
+    rss.mjs
+tailwind.config.js
+tsconfig.json
+yarn.lock
+```
