@@ -1,4 +1,4 @@
-![chuck-blog-home](/public/static/images/chuck-blog-home-241106.jpg)
+![chuck-blog-home](/public/static/images/chuck-blog-home-20241106.jpg)
 
 # ChuckBlog
 
