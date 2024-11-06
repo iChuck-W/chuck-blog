@@ -17,7 +17,7 @@ const ContentSecurityPolicy = `
 `
 
 const securityHeaders = [
-  // 嵌入 iframe 条件
+  // 屏蔽 iframe 的 Security-Policy
   // https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP
   //{
   //  key: 'Content-Security-Policy',

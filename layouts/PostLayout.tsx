@@ -12,6 +12,7 @@ import Tag from '@/components/Tag'
 import siteMetadata from '@/data/siteMetadata'
 import ScrollTopAndComment from '@/components/ScrollTopAndComment'
 
+// 新增 components
 import ProgressBar from '@/components/ProgressBar'
 import { Toc } from '@/components/TOCInline'
 import TOCInline from '@/components/TOCInline'
