@@ -56,6 +56,15 @@ export default function Home() {
 
       <div className="type-wrap">
         <span style={{ whiteSpace: 'pre' }} />
+
+        <li>
+          {' '}
+          <b>2024-11-14【公告】</b>
+          这两天后端数据接口问题可能导致回答中断，最晚下周一迭代，更新数据来源。
+          <br />
+          <br />
+        </li>
+
         <li>
           点击进入
           <a href="https://www.chuckblog.com/blog/240612-Introduction" target="_blank">
