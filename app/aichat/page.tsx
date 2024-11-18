@@ -58,12 +58,15 @@ export default function Home() {
         <span style={{ whiteSpace: 'pre' }} />
 
         <li>
-          {' '}
-          <b>2024-11-14【公告】</b>
-          这两天后端数据接口问题可能导致回答中断，最晚下周一迭代，更新数据来源。
-          <br />
-          <br />
+          点击进入
+          <a href="https://www.chuckblog.com/brand-library" target="_blank">
+            {' '}
+            <b>
+              📃<u>品牌库</u>
+            </b>
+          </a>
         </li>
+        <br />
 
         <li>
           点击进入

@@ -12,7 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: post.lastmod || post.date,
     }))
 
-  const routes = ['', 'aichat', 'blog', 'projects', 'tags'].map((route) => ({
+  const routes = ['', 'aichat', 'blog', 'projects', 'tags', 'brand-library'].map((route) => ({
     url: `${siteUrl}/${route}`,
     lastModified: new Date().toISOString().split('T')[0],
   }))
