@@ -2,7 +2,7 @@
 title: '让“工业品智能专家”帮助工业品牌充分利用官网资讯'
 authors: ['default']
 date: '2024-06-12'
-lastmod: '2024-10-16'
+lastmod: '2024-12-02'
 tags: ['AIGC', '工业品']
 draft: false
 layout: PostLayout
@@ -13,47 +13,19 @@ summary: '我的观点：品牌的官网应该作为一个品牌的开放型资�
 
 <TOCInline toc={props.toc} exclude="Introduction" />
 
-## 更新
-
-- 针对品牌官网的应用场景，我在[**个人博客**](https://www.chuckblog.com/)全站页面右下角嵌入对话框按键作为示例。
-
-<Image alt="013" src="/illustration/2024-001/013.jpg" width={400} height={200} />
-
-- 接入了部分**品牌的官网搜索页**，以下是回答中包括品牌官网搜索结果的示例。
-  - 品牌官网的搜索结果如下：[iPhone 16](http://www.apple.com.cn/cn/search/iPhone%2016)
-    <Image alt="014" src="/illustration/2024-001/014.png" width={800} height={200} />
-
-## 概述
-
-<video
-  controls
-  alt="Video_20240902"
-  src="/illustration/2024-001/Video_20240902.mp4"
-  width={800}
-  height={400}
-/>
+## 简述
 
 - 知乎专栏：​[面向通用人工智能 AGI 的实操学习](https://www.zhihu.com/column/c_1766872813313765376)
 
+- Version_2024-12-02：
+
+  - 为了改善 Dify 数据库的容量、长文召回精准度以及搜索引擎的精准度问题，已经接入 Zilliz 向量库。内容检索速度和精准度有提升，但放弃了内容的丰富度。
+  - 内容检索前会对用户问题重组，所以对用户提问的要求（或者说对提示词 Prompt 的理解）没那么重要了。
+
 - 我针对工业品采购和使用中会遇到的问题做了个 [“工业品智能专家”](https://www.bangxuanxing.com)
 
-  - 为了减少跳转，我把使用说明和对话入口做了整合，**无需跳转和登录，即开即用，同时页面嵌入大厂 AI 问答入口，方便对比。**
   - 域名中 "bangxuanxing" 命名是依据采购过程中可能遇到的难点： **“选型”** ，后来收集数据的过程中衍生到了产品的使用和品牌服务等内容。
-  - 已经在微信交流群做测试，同时接入 Google 和 Bing 搜索，收集更多数据，有工业小伙伴们能看到这个网站的欢迎试用，提出建议。
-    <div className="-mx-2 flex flex-wrap overflow-hidden xl:-mx-2">
-      <div className="my-1 w-full overflow-hidden px-2 xl:my-1 xl:w-1/2 xl:px-2">
-        ![001](/illustration/2024-001/001.jpg)
-      </div>
-      <div className="my-1 w-full overflow-hidden px-2 xl:my-1 xl:w-1/2 xl:px-2">
-        ![002](/illustration/2024-001/002.jpg)
-      </div>
-    </div>
 
-- 我的观点：**品牌的官网应该作为一个品牌的开放型资讯中心，减少信息传递过程当中人工干预的部分，提高效率同时降低错误率。**
-  - 在收集数据的过程中可以明显的看到国内的品牌对这儿关注真不多，所以资料库汇总的多数是国外品牌。在这个阶段，公开自己高质量的产品数据算是免费的推广，可以让更多大厂模型获得数据。
-  - <u>**优势**</u>：品牌官网提供一站式服务：选型 - 销售 - 疑难解答 -
-    售后等，同时可以针对高价保值的产品做回收和低价出售。且并不影响分销模式，**收集的客户信息可以分发给各区代理**。
-  - 劣势：1.适用的产品线窄。2.品牌售后服务能力未知，官网开放评论区的还不多。
 - **关系链示意图**
 
   - 品牌官网：是一个品牌的资讯中心
@@ -61,6 +33,26 @@ summary: '我的观点：品牌的官网应该作为一个品牌的开放型资�
   - Ai 助手：串联资讯
     <Image alt="003" src="/illustration/2024-001/003.png" width={800} height={400} />
 
+- 模型回答**内容集合的资料**：产品在线文档，视频教程，官网搜索结果等。
+
+  - 模型入口结合：**页面嵌入大厂 AI 问答入口，方便对比。**
+  - 品牌官网集合：新建的品牌官网[入口页面](https://www.chuckblog.com/brand-library)。
+  - 以下是回答中包括**产品文档**和品牌官网**搜索结果**的示例。品牌官网的搜索结果如下：[iPhone 16](http://www.apple.com.cn/cn/search/iPhone%2016)
+    <Image alt="014" src="/illustration/2024-001/014.png" width={800} height={200} />
+
+- 我的观点：**品牌的官网应该作为一个品牌的开放型资讯中心，减少信息传递过程当中人工干预的部分，提高效率同时降低错误率。**
+  - 在收集数据的过程中可以明显的看到国内的品牌对这儿关注真不多，所以资料库汇总的多数是国外品牌。在这个阶段，公开自己高质量的产品数据算是免费的推广，可以让更多大厂模型获得数据。
+  - <u>**优势**</u>：品牌官网提供一站式服务：选型 - 销售 - 疑难解答 -
+    售后等，同时可以针对高价保值的产品做回收和低价出售。且并不影响分销模式，**收集的客户信息可以分发给各区代理**。
+  - 劣势：1.适用的产品线窄。2.品牌售后服务能力未知，官网开放评论区的还不多。
+
+## 使用场景
+
+- 针对品牌官网的应用场景，我在[**个人博客**](https://www.chuckblog.com/)全站页面右下角嵌入对话框按键作为示例。
+
+  <Image alt="013" src="/illustration/2024-001/013.jpg" width={800} height={200} />
+
+  {' '}
   <iframe
     title="agent"
     src="https://udify.app/chat/LRuTOu0nFAn4HfiJ"
@@ -69,7 +61,31 @@ summary: '我的观点：品牌的官网应该作为一个品牌的开放型资�
     className="iframe"
   ></iframe>
 
-## 使用方法
+  {' '}
+  <video
+    controls
+    alt="Video_20240902"
+    src="/illustration/2024-001/Video_20240902.mp4"
+    width={800}
+    height={400}
+  />
+
+## 存档内容
+
+### 更新测试
+
+- 已经在微信交流群做测试，同时接入 Google 和 Bing 搜索，收集更多数据，有工业小伙伴们能看到这个网站的欢迎试用，提出建议。
+
+  <div className="-mx-2 flex flex-wrap overflow-hidden xl:-mx-2">
+    <div className="my-1 w-full overflow-hidden px-2 xl:my-1 xl:w-1/2 xl:px-2">
+      ![001](/illustration/2024-001/001.jpg)
+    </div>
+    <div className="my-1 w-full overflow-hidden px-2 xl:my-1 xl:w-1/2 xl:px-2">
+      ![002](/illustration/2024-001/002.jpg)
+    </div>
+  </div>
+
+### 使用方法
 
 - 对于**提示词 Prompt** 的解释：用户需要注意的就是问题语句中的词汇，模型会拆解语句后在知识库中查询，所以问题的表述要完整。
 
@@ -123,7 +139,7 @@ summary: '我的观点：品牌的官网应该作为一个品牌的开放型资�
 
     <Image alt="010" src="/illustration/2024-001/010.jpg" width={400} height={200} />
 
-## 注意事项
+### 注意事项
 
 - 每天都会过一下大家和模型交流的内容，主要的问题就是需求不够明确会让模型的回答很宽泛。
   - **<u>问题类型-产品功能咨询</u>**：未指定型号。
