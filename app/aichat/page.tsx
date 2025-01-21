@@ -30,9 +30,6 @@ const SidebarContent = () => (
         <a href="#section2">📇 对话入口</a>
       </li>
       <li className="text-mid mb-4">
-        <a href="#section3">🧑‍🏭 工业品智能专家</a>
-      </li>
-      <li className="text-mid mb-4">
         <a href="#section4">🧑‍💻 DeepSeek</a>
       </li>
       <li className="text-mid mb-4">
@@ -56,6 +53,17 @@ export default function Home() {
 
       <div className="type-wrap">
         <span style={{ whiteSpace: 'pre' }} />
+
+        <li>
+          点击进入
+          <a href="https://www.aibangxuanxing.com" target="_blank">
+            {' '}
+            <b>
+              📃<u>工业品智能专家</u>
+            </b>
+          </a>
+        </li>
+        <br />
 
         <li>
           点击进入
@@ -158,24 +166,6 @@ export default function Home() {
             <u>腾讯元宝</u>
           </a>
         </p>
-      </div>
-
-      <br />
-      <div id="section3">
-        <a
-          target="_blank"
-          href="https://www.aibangxuanxing.com/"
-          className="custom-link text-xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-3xl sm:leading-10 md:text-3xl md:leading-14"
-        >
-          🧑‍🏭 工业品智能专家
-        </a>
-        <iframe
-          title="agent"
-          src="https://udify.app/chat/LRuTOu0nFAn4HfiJ"
-          height="700px"
-          width="100%"
-          className="iframe"
-        ></iframe>
       </div>
 
       <br />

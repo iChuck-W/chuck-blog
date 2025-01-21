@@ -23,7 +23,7 @@ export default function Home() {
       <div style={{ textAlign: 'center' }}>
         <iframe
           title="agent"
-          src="https://udify.app/chat/LRuTOu0nFAn4HfiJ"
+          src="https://www.aibangxuanxing.com/"
           height="700px"
           width="100%"
           className="iframe"
