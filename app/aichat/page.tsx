@@ -27,7 +27,7 @@ const SidebarContent = () => (
         <a href="#section1">📇 说明</a>
       </li>
       <li className="text-mid mb-4">
-        <a href="#section2">📇 对话入口</a>
+        <a href="#section2">📇 对话入口集合</a>
       </li>
       <li className="text-mid mb-4">
         <a href="#section4">🧑‍💻 DeepSeek</a>
@@ -59,18 +59,7 @@ export default function Home() {
           <a href="https://www.aibangxuanxing.com" target="_blank">
             {' '}
             <b>
-              📃<u>工业品智能专家</u>
-            </b>
-          </a>
-        </li>
-        <br />
-
-        <li>
-          点击进入
-          <a href="https://www.chuckblog.com/brand-library" target="_blank">
-            {' '}
-            <b>
-              📃<u>品牌库</u>
+              🧑‍🏭<u>工业品智能专家</u>
             </b>
           </a>
         </li>
@@ -116,7 +105,7 @@ export default function Home() {
 
         <div id="section2" className="space-y-2 pb-8 pt-6 md:space-y-5">
           <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-3xl sm:leading-10 md:text-3xl md:leading-14">
-            <strong>📇 对话入口</strong>
+            <strong>📇 对话入口集合</strong>
           </h1>
         </div>
 
