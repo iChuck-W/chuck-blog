@@ -79,7 +79,7 @@ export default function Home() {
         <p>
           &nbsp;&nbsp;&nbsp;&nbsp;
           <a
-            href="https://ichuck-w.github.io/shared-documents/#/20240831_070618_4392.md"
+            href="https://ichuck-w.github.io/github-actions-results_shared-documents/#/20240831_070618_4392.md"
             target="_blank"
           >
             {' '}
