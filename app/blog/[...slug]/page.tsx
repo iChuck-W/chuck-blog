@@ -2,7 +2,6 @@ import 'css/prism.css'
 import 'katex/dist/katex.css'
 
 // import PageTitle from '@/components/PageTitle'
-// import { Toc } from '@/components/Toc'
 
 import { components } from '@/components/MDXComponents'
 import { MDXLayoutRenderer } from 'pliny/mdx-components'
@@ -17,18 +16,16 @@ import siteMetadata from '@/data/siteMetadata'
 import { notFound } from 'next/navigation'
 
 const defaultLayout = 'PostLayout'
-
 const layouts = {
   PostSimple,
   PostLayout,
   PostBanner,
 }
 
-export async function generateMetadata({
-  params,
-}: {
-  params: { slug: string[] }
+export async function generateMetadata(props: {
+  params: Promise<{ slug: string[] }>
 }): Promise<Metadata | undefined> {
+  const params = await props.params
   const slug = decodeURI(params.slug.join('/'))
   const post = allBlogs.find((p) => p.slug === slug)
   const authorList = post?.authors || ['default']
@@ -81,7 +78,8 @@ export const generateStaticParams = async () => {
   return allBlogs.map((p) => ({ slug: p.slug.split('/').map((name) => decodeURI(name)) }))
 }
 
-export default async function Page({ params }: { params: { slug: string[] } }) {
+export default async function Page(props: { params: Promise<{ slug: string[] }> }) {
+  const params = await props.params
   const slug = decodeURI(params.slug.join('/'))
   // Filter out drafts in production
   const sortedCoreContents = allCoreContent(sortPosts(allBlogs))
@@ -115,13 +113,7 @@ export default async function Page({ params }: { params: { slug: string[] } }) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <Layout
-        content={mainContent}
-        authorDetails={authorDetails}
-        next={next}
-        prev={prev}
-        toc={post.toc}
-      >
+      <Layout content={mainContent} authorDetails={authorDetails} next={next} prev={prev}>
         <MDXLayoutRenderer code={post.body.code} components={components} toc={post.toc} />
       </Layout>
     </>

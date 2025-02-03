@@ -1,9 +1,15 @@
-import { NewsletterAPI } from 'pliny/newsletter'
+import { MetadataRoute } from 'next'
 import siteMetadata from '@/data/siteMetadata'
 
-const handler = NewsletterAPI({
-  // @ts-ignore
-  provider: siteMetadata.newsletter.provider,
-})
+export const dynamic = 'force-static'
 
-export { handler as GET, handler as POST }
+export default function robots(): MetadataRoute.Robots {
+  return {
+    rules: {
+      userAgent: '*',
+      allow: '/',
+    },
+    sitemap: `${siteMetadata.siteUrl}/sitemap.xml`,
+    host: siteMetadata.siteUrl,
+  }
+}
