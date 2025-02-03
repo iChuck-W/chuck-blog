@@ -41,7 +41,11 @@ const LayoutWithSidebar: React.FC<LayoutWithSidebarProps> = ({ sidebar, children
         role="button"
         tabIndex={0}
         onClick={toggleSidebar}
-        onKeyDown={toggleSidebar}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            toggleSidebar()
+          }
+        }}
         aria-label={isSidebarOpen ? 'Close menu' : 'Open menu'}
       >
         {sidebar}
