@@ -36,10 +36,8 @@ const LayoutWithSidebar: React.FC<LayoutWithSidebarProps> = ({ sidebar, children
 
   return (
     <div className="flex">
-      <div
+      <button
         className={`sidebar fixed left-0 top-0 h-full ${isSidebarOpen ? 'active' : 'hidden'} md:block`}
-        role="button"
-        tabIndex={0}
         onClick={toggleSidebar}
         onKeyDown={(e) => {
           if (e.key === 'Enter' || e.key === ' ') {
@@ -47,10 +45,12 @@ const LayoutWithSidebar: React.FC<LayoutWithSidebarProps> = ({ sidebar, children
           }
         }}
         aria-label={isSidebarOpen ? 'Close menu' : 'Open menu'}
+        aria-expanded={isSidebarOpen}
+        aria-controls="sidebar-content"
       >
         {sidebar}
-      </div>
-      <div className="md:w-9/10 flex w-full items-center justify-center p-4 md:ml-32">
+      </button>
+      <div id="sidebar-content" className="md:w-9/10 flex w-full items-center justify-center p-4 md:ml-32">
         <div className="w-full max-w-4xl" onClick={(e) => e.stopPropagation()}>
           {children}
         </div>
@@ -60,6 +60,8 @@ const LayoutWithSidebar: React.FC<LayoutWithSidebarProps> = ({ sidebar, children
         className="menu-toggle menu-icon fixed left-4 top-4 md:hidden"
         onClick={toggleSidebar}
         aria-label={isSidebarOpen ? 'Close menu' : 'Open menu'}
+        aria-expanded={isSidebarOpen}
+        aria-controls="sidebar-content"
       >
         {isSidebarOpen ? (
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="32" width="32">
