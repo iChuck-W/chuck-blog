@@ -18,11 +18,13 @@ summary: '利用向量数据库的混合检索提升召回准确度。'
 - 应对的问题：Dify Professional 版知识库的容量小（200 MB）和长文检索召回准确度不准。
 
 - 测试过的**工具和问题**
+
   - Dify 给出的方案[对接 AWS Bedrock](https://docs.dify.ai/zh-hans/learn-more/use-cases/how-to-connect-aws-bedrock) 知识库，流程复杂。
-  > Dify 平台尚不能直接连接 AWS Bedrock Knowledge Base，需要开发团队参考 Dify 关于外部知识库连接的 [API 定义](https://docs.dify.ai/zh-hans/guides/knowledge-base/external-knowledge-api-documentation)，手动创建后端 API 服务，建立与 AWS Bedrock 的连接。
+    > Dify 平台尚不能直接连接 AWS Bedrock Knowledge Base，需要开发团队参考 Dify 关于外部知识库连接的 [API 定义](https://docs.dify.ai/zh-hans/guides/knowledge-base/external-knowledge-api-documentation)，手动创建后端 API 服务，建立与 AWS Bedrock 的连接。
   - 向量数据库 Zilliz、Qdrant、Weaviate，后两者在线服务还不成熟。
 
 - 最终选择 Zilliz 向量数据库继续遇到的难点
+
   - 问题文本需要自己向量化后再去 Zilliz 数据库做检索，Zilliz Pipeline 配置的是 [bge-base-zh-v1.5](https://huggingface.co/BAAI/bge-base-zh-v1.5)，为了节省，必须寻找可以在线调用的 bge-base-zh-v1.5 ……
   - 国内大厂基本只支持在线调用自家的文本向量模型 ……
   - HuggingFace Inference API 可以直接调用的向量模型 [bge-large-zh-v1.5](https://huggingface.co/BAAI/bge-large-zh-v1.5)（不包括 bge-base-zh-v1.5），并且 http response 可能＞20s ……
@@ -34,7 +36,7 @@ summary: '利用向量数据库的混合检索提升召回准确度。'
     - 本地生成 ONNX 模型文件
 
 ```Python
-# Pythorch 框架 
+# Pythorch 框架
 # 生成 bge-base-zh-v1.5 onnx 文件代码
 import torch
 from transformers import BertModel, BertConfig
@@ -83,10 +85,12 @@ torch.onnx.export(model,
 
 print(f"模型已导出为 ONNX 格式: {output_onnx}")
 ```
+
     - 在 HuggingFace 自己账户 Create a new model repository，同步自己本地模型，然后部署 Deploy - Inference Endpoints
     <Image alt="000" src="/illustration/2024-003/huggingface-bge-base-zh-v1.5.jpg" width={800} height={200} />
 
     - 调用自己部署的在线模型将问题文本向量化，Feature Extraction: [https://huggingface.co/docs/api-inference/tasks/feature-extraction](https://huggingface.co/docs/api-inference/tasks/feature-extraction)
+
 ```Python
 import requests
 
@@ -103,7 +107,9 @@ output = query({
 
 print(output)
 ```
-  - 然后通过 Zilliz 知识库混合检索 Hybrid Search: [https://docs.zilliz.com.cn/reference/restful/hybrid-search-v2](https://docs.zilliz.com.cn/reference/restful/hybrid-search-v2)
+
+- 然后通过 Zilliz 知识库混合检索 Hybrid Search: [https://docs.zilliz.com.cn/reference/restful/hybrid-search-v2](https://docs.zilliz.com.cn/reference/restful/hybrid-search-v2)
+
 ```Python
 # 此操作根据矢量相似性和标量筛选搜索实体，并使用指定的策略对结果进行重新排序
 # metricType 当前搜索所使用的度量类型。该值应与目标 Collection 的度量类型相同
@@ -156,7 +162,7 @@ print(response.json())
 ```
 
 - 本地生成文本向量，可以用作 Zilliz 在线向量检索
-<Image alt="001" src="/illustration/2024-003/Zilliz.jpg" width={800} height={200} />
+  <Image alt="001" src="/illustration/2024-003/Zilliz.jpg" width={800} height={200} />
 
 ```Python
 # 文本向量化用作查询词
@@ -194,4 +200,3 @@ assert sentence_embedding.size(0) == 768, "向量维度不为 768"
 sentence_embedding_list = sentence_embedding.tolist()
 print(sentence_embedding_list)
 ```
-    

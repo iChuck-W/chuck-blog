@@ -1,4 +1,3 @@
-import Head from 'next/head'
 import React from 'react'
 import 'css/app.css'
 import { genPageMetadata } from 'app/seo'
@@ -56,51 +55,22 @@ export default function Home() {
 
         <li>
           点击进入
-          <a href="https://www.aibangxuanxing.com" target="_blank">
-            {' '}
-            <b>
-              🧑‍🏭<u>工业品智能专家</u>
-            </b>
-          </a>
-        </li>
-        <br />
-
-        <li>
-          点击进入
           <a href="https://www.chuckblog.com/blog/240612-Introduction" target="_blank">
             {' '}
             <b>
               📃<u>使用说明文</u>
             </b>
           </a>
-          。除了常规问答，新增了模型解读网页内容，生成可下载供编辑文件的功能。
-          <strong>以下是招标内容摘录示例：</strong>
         </li>
-        <p>
-          &nbsp;&nbsp;&nbsp;&nbsp;
-          <a
-            href="https://ichuck-w.github.io/github-actions-results_shared-documents/#/20240831_070618_4392.md"
-            target="_blank"
-          >
-            {' '}
-            ○ 📃 <u>浏览链接</u>
-          </a>
-        </p>
-        <p>
-          &nbsp;&nbsp;&nbsp;&nbsp;
-          <a
-            href="https://raw.githubusercontent.com/ichuck-w/shared-documents/main/docs/20240831_070618_4392.md"
-            target="_blank"
-            download="20240831_070618_4392.md"
-          >
-            {' '}
-            ○ 📃 <u>下载链接</u>
-          </a>
-        </p>
-        <br />
+
         <li>
-          Windows 系统自带的 Microsoft Edge
-          浏览器会拒绝连接部分入口，应该是【设置-隐私、搜索和服务-防止跟踪】的配置问题。
+          点击进入
+          <a href="https://www.aibangxuanxing.com" target="_blank">
+            {' '}
+            <b>
+              🧑‍🏭<u>工业品智能专家</u>
+            </b>
+          </a>
         </li>
 
         <div id="section2" className="space-y-2 pb-8 pt-6 md:space-y-5">
@@ -155,6 +125,11 @@ export default function Home() {
             <u>腾讯元宝</u>
           </a>
         </p>
+
+        <li>
+          Windows 系统自带的 Microsoft Edge
+          浏览器会拒绝连接部分入口，应该是【设置-隐私、搜索和服务-防止跟踪】的配置问题。
+        </li>
       </div>
 
       <br />
