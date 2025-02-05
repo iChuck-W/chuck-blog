@@ -74,11 +74,24 @@ module.exports = () => {
     },
     images: {
       dangerouslyAllowSVG: true,
-      domains: ['ty9rlllq4oeuztdx.public.blob.vercel-storage.com', 'chuckphotos.vercel.app'],
       remotePatterns: [
         {
           protocol: 'https',
+          hostname: 'ty9rlllq4oeuztdx.public.blob.vercel-storage.com',
+          port: '',
+          pathname: '/**',
+        },
+        {
+          protocol: 'https',
+          hostname: 'chuckphotos.vercel.app',
+          port: '',
+          pathname: '/**',
+        },
+        {
+          protocol: 'https',
           hostname: 'picsum.photos',
+          port: '',
+          pathname: '/**',
         },
       ],
       unoptimized,

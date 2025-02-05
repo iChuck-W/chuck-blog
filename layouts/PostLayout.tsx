@@ -39,7 +39,7 @@ interface LayoutProps {
 }
 
 export default function PostLayout({
-  toc,
+  toc = [],
   content,
   authorDetails,
   next,
