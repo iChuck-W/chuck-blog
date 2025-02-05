@@ -2,9 +2,6 @@ import React from 'react'
 import 'css/app.css'
 import { genPageMetadata } from 'app/seo'
 
-import Image from 'next/image'
-import LayoutWithSidebar from '@/components/LayoutWithSidebar'
-
 export const metadata = genPageMetadata({
   title: '🧑‍🏭 工业品智能专家 · 专注工业品使用指导和采购选型',
   description:
@@ -12,179 +9,82 @@ export const metadata = genPageMetadata({
   keywords: ['工业品', '人工智能', '五金工具'],
 })
 
-const SidebarContent = () => (
-  <div>
-    <Image
-      src="/static/favicons/logo-tool.svg"
-      alt="Landscape picture"
-      className="mx-auto mb-12 mt-12 h-12 w-12"
-      width={75}
-      height={75}
-    />
-    <ul>
-      <li className="text-mid mb-4">
-        <a href="#section1">📇 说明</a>
-      </li>
-      <li className="text-mid mb-4">
-        <a href="#section2">📇 对话入口集合</a>
-      </li>
-      <li className="text-mid mb-4">
-        <a href="#section4">🧑‍💻 DeepSeek</a>
-      </li>
-      <li className="text-mid mb-4">
-        <a href="#section5">🧑‍💻 Kimi.ai</a>
-      </li>
-      <li className="text-mid mb-4">
-        <a href="#section6">🧑‍💻 文心一言</a>
-      </li>
-    </ul>
+const HEADING_STYLES = 'text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-3xl sm:leading-10 md:text-3xl md:leading-14'
+
+const EXTERNAL_LINKS = [
+  { name: 'Perplexity', url: 'https://www.perplexity.ai/' },
+  { name: '秘塔 AI 搜索', url: 'https://metaso.cn/' },
+  { name: '智谱清言', url: 'https://chatglm.cn/' },
+  { name: '通义千问', url: 'https://tongyi.aliyun.com/qianwen' },
+  { name: '豆包', url: 'https://www.doubao.com' },
+  { name: '腾讯元宝', url: 'https://yuanbao.tencent.com/chat' },
+]
+
+const IFRAME_SECTIONS = [
+  { id: 'deepseek', name: 'DeepSeek', url: 'https://chat.deepseek.com' },
+  { id: 'kimi', name: 'Kimi.ai', url: 'https://kimi.moonshot.cn' },
+  { id: 'yiyan', name: '文心一言', url: 'https://yiyan.baidu.com' },
+]
+
+const IframeSection = ({ name, url }: { name: string; url: string }) => (
+  <div className="mb-8">
+    <a target="_blank" href={url} className={`custom-link ${HEADING_STYLES}`}>
+      🧑‍💻 {name}
+    </a>
+    <iframe title={name} src={url} height="700px" width="100%" className="iframe" />
   </div>
 )
 
 export default function Home() {
   return (
-    <LayoutWithSidebar sidebar={<SidebarContent />}>
+    <div className="mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0">
       <div id="section1" className="space-y-2 pb-8 pt-6 md:space-y-5">
-        <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-3xl sm:leading-10 md:text-3xl md:leading-14">
+        <h1 className={HEADING_STYLES}>
           <strong>📇 说明</strong>
         </h1>
       </div>
 
       <div className="type-wrap">
-        <span style={{ whiteSpace: 'pre' }} />
+        <ul className="list-none">
+          <li>
+            ●&nbsp;&nbsp;点击进入
+            <a href="https://www.chuckblog.com/blog/240612-Introduction" target="_blank" className="ml-1">
+              <b>📃<u>使用说明文</u></b>
+            </a>
+          </li>
 
-        <li>
-          点击进入
-          <a href="https://www.chuckblog.com/blog/240612-Introduction" target="_blank">
-            {' '}
-            <b>
-              📃<u>使用说明文</u>
-            </b>
-          </a>
-        </li>
-
-        <li>
-          点击进入
-          <a href="https://www.aibangxuanxing.com" target="_blank">
-            {' '}
-            <b>
-              🧑‍🏭<u>工业品智能专家</u>
-            </b>
-          </a>
-        </li>
+          <li>
+            ●&nbsp;&nbsp;点击进入
+            <a href="https://www.aibangxuanxing.com" target="_blank" className="ml-1">
+              <b>🧑‍🏭<u>工业品智能专家</u></b>
+            </a>
+          </li>
+        </ul>
 
         <div id="section2" className="space-y-2 pb-8 pt-6 md:space-y-5">
-          <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-3xl sm:leading-10 md:text-3xl md:leading-14">
+          <h1 className={HEADING_STYLES}>
             <strong>📇 对话入口集合</strong>
           </h1>
         </div>
 
-        <li>
-          页面整合了头部 AI 问答入口，减少跳转，方便对比。
-          <b>以下是无法嵌入的入口，点击后可跳转：</b>
-        </li>
-        <p>
-          &nbsp;&nbsp;&nbsp;&nbsp;○ 🧑‍💻{' '}
-          <a href="https://www.perplexity.ai/" target="_blank">
-            {' '}
-            <u>Perplexity</u>
-          </a>
-        </p>
-        <p>
-          &nbsp;&nbsp;&nbsp;&nbsp;○ 🧑‍💻{' '}
-          <a href="https://metaso.cn/" target="_blank">
-            {' '}
-            <u>秘塔 AI 搜索</u>
-          </a>
-        </p>
-        <p>
-          &nbsp;&nbsp;&nbsp;&nbsp;○ 🧑‍💻{' '}
-          <a href="https://chatglm.cn/" target="_blank">
-            {' '}
-            <u>智谱清言</u>
-          </a>
-        </p>
-        <p>
-          &nbsp;&nbsp;&nbsp;&nbsp;○ 🧑‍💻{' '}
-          <a href="https://tongyi.aliyun.com/qianwen" target="_blank">
-            {' '}
-            <u>通义千问</u>
-          </a>
-        </p>
-        <p>
-          &nbsp;&nbsp;&nbsp;&nbsp;○ 🧑‍💻{' '}
-          <a href="https://www.doubao.com" target="_blank">
-            {' '}
-            <u>豆包</u>
-          </a>
-        </p>
-        <p>
-          &nbsp;&nbsp;&nbsp;&nbsp;○ 🧑‍💻{' '}
-          <a href="https://yuanbao.tencent.com/chat" target="_blank">
-            {' '}
-            <u>腾讯元宝</u>
-          </a>
-        </p>
+        <div>
+          <p>●&nbsp;&nbsp;页面整合了头部 AI 问答入口，减少跳转，方便对比。<b>以下是无法嵌入的入口，点击后可跳转：</b></p>
+          {EXTERNAL_LINKS.map((link) => (
+            <p key={link.url} className="ml-4">
+              ○ 🧑‍💻 <a href={link.url} target="_blank"><u>{link.name}</u></a>
+            </p>
+          ))}
+        </div>
 
-        <li>
-          Windows 系统自带的 Microsoft Edge
+        <p className="mt-4">
+          ●&nbsp;&nbsp;Windows 系统自带的 Microsoft Edge
           浏览器会拒绝连接部分入口，应该是【设置-隐私、搜索和服务-防止跟踪】的配置问题。
-        </li>
+        </p>
       </div>
 
-      <br />
-      <div id="section4">
-        <a
-          target="_blank"
-          href="https://chat.deepseek.com"
-          className="custom-link custom-link text-xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-3xl sm:leading-10 md:text-3xl md:leading-14"
-        >
-          🧑‍💻 DeepSeek
-        </a>
-        <iframe
-          title="agent"
-          src="https://chat.deepseek.com"
-          height="700px"
-          width="100%"
-          className="iframe"
-        ></iframe>
-      </div>
-
-      <br />
-      <div id="section5">
-        <a
-          target="_blank"
-          href="https://kimi.moonshot.cn"
-          className="custom-link custom-link text-xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-3xl sm:leading-10 md:text-3xl md:leading-14"
-        >
-          🧑‍💻 Kimi.ai
-        </a>
-        <iframe
-          title="agent"
-          src="https://kimi.moonshot.cn"
-          height="700px"
-          width="100%"
-          className="iframe"
-        ></iframe>
-      </div>
-
-      <br />
-      <div id="section6">
-        <a
-          target="_blank"
-          href="https://yiyan.baidu.com"
-          className="custom-link custom-link text-xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-3xl sm:leading-10 md:text-3xl md:leading-14"
-        >
-          🧑‍💻 文心一言
-        </a>
-        <iframe
-          title="agent"
-          src="https://yiyan.baidu.com"
-          height="700px"
-          width="100%"
-          className="iframe"
-        ></iframe>
-      </div>
-    </LayoutWithSidebar>
+      {IFRAME_SECTIONS.map((section) => (
+        <IframeSection key={section.id} name={section.name} url={section.url} />
+      ))}
+    </div>
   )
 }
